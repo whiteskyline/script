@@ -89,3 +89,9 @@ export PATH=$ANT_HOME/bin:$PATH
 #
 export PROTOBUF_HOME=/Users/horizon/soft/package/protobuf
 export PATH=$PROTOBUF_HOME/bin:$PATH
+
+#
+# Nginx Env Unit
+#
+export NGINX_HOME=/Users/horizon/soft/package/nginx
+export PATH=$NGINX_HOME/bin:$PATH
