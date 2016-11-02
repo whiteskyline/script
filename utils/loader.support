@@ -1,0 +1,25 @@
+#!/bin/bash - 
+#===============================================================================
+#
+#          FILE: loader.sh
+# 
+#         USAGE: ./loader.sh 
+# 
+#   DESCRIPTION: load all system config shell
+# 
+#       OPTIONS: ---
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: linmingxing
+#  ORGANIZATION: 
+#       CREATED: 01/13/15 14:34
+#      REVISION:  ---
+#===============================================================================
+
+source ./cd.sh
+source ./mysql.sh
+source ./git.sh
+source ./st.sh
+source ./zk.sh
+source ./mvn.sh
