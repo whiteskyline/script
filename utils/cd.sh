@@ -37,10 +37,8 @@ alias cdd="newcd"
 
 function go()
 {
-  if [[ $1 == "src" ]]; then
-    cdd /Users/horizon/src_st/
-  elif [[ $1 == "mqueue" ]]; then
-    cdd /Users/horizon/src_st/micloudqueuingtools
+  if [[ $1 == "source" ]]; then
+    cdd /Users/horizon/source
   elif [[ $1 == "video" ]]; then
     cdd /Users/horizon/src_st/video-stream
   elif [[ $1 == "keycenter" ]]; then
@@ -51,13 +49,9 @@ function go()
     cdd /Users/horizon/script_st/info_st/
   elif [[ $1 == "doc" ]]; then
     cdd /Users/horizon/src_st/documents/
-  elif [[ $1 == "nginx" ]]; then
-    cdd /Users/horizon/soft_st/nginx/
   elif [[ $1 == "soft" ]]; then
     cdd /Users/horizon/soft_st/
-  elif [[ $1 == "tomcat" ]]; then
-    cdd /Users/horizon/soft_st/apache-tomcat-6
   elif [[ $1 == "script" ]]; then
-    cdd /Users/horizon/script_st
+    cdd /Users/horizon/script
   fi
 }
