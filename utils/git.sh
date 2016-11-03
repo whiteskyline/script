@@ -19,3 +19,4 @@
 
 alias gitv="open /Applications/GitHub\ Desktop.app"
 alias gitg="git log --graph --decorate --oneline"
+alias status-check="sh /Users/horizon/core/status-check.sh"

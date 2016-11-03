@@ -23,3 +23,5 @@ source ./git.sh
 source ./st.sh
 source ./zk.sh
 source ./mvn.sh
+source ./alias.sh
+source ./sbt.sh
