@@ -69,3 +69,4 @@ function genand() {
 
 alias pc="pbcopy"
 alias sc="screencapture -s -c"
+alias hy="history"
