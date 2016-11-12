@@ -53,5 +53,7 @@ function go()
     cdd /Users/horizon/soft_st/
   elif [[ $1 == "script" ]]; then
     cdd /Users/horizon/script
+  elif [[ $1 == "nginx" ]]; then
+    cdd /Users/horizon/soft/package/openresty/nginx
   fi
 }
