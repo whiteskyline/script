@@ -95,3 +95,17 @@ export PATH=$PROTOBUF_HOME/bin:$PATH
 #
 export NGINX_HOME=/Users/horizon/soft/package/openresty/nginx
 export PATH=$NGINX_HOME/sbin:$PATH
+
+#
+# REPO Env Init
+#
+export REPO_HOME=/Users/horizon/soft/package/repo
+export PATH=$REPO_HOME/bin:$PATH
+
+#
+#
+#
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+export GRADLE_HOME=/Users/horizon/soft/package/gradle
+export PATH=$GRADLE_HOME/bin:$PATH
