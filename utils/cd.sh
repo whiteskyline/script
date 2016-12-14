@@ -50,7 +50,7 @@ function go()
   elif [[ $1 == "doc" ]]; then
     cdd /Users/horizon/src_st/documents/
   elif [[ $1 == "soft" ]]; then
-    cdd /Users/horizon/soft_st/
+    cdd /Users/horizon/soft/
   elif [[ $1 == "script" ]]; then
     cdd /Users/horizon/script
   elif [[ $1 == "nginx" ]]; then
