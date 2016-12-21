@@ -87,7 +87,7 @@ export PATH=$ANT_HOME/bin:$PATH
 #
 # Protobuf Env Init
 #
-export PROTOBUF_HOME=/Users/horizon/soft/package/protobuf
+export PROTOBUF_HOME=/Users/horizon/soft/package/protoc
 export PATH=$PROTOBUF_HOME/bin:$PATH
 
 #
