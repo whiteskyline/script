@@ -110,5 +110,5 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export GRADLE_HOME=/Users/horizon/soft/package/gradle
 export PATH=$GRADLE_HOME/bin:$PATH
 
-export ANDROID_HOME=/Users/minghorizon/Library/Android/sdk
+export ANDROID_HOME=/Users/horizon/soft/package/android-sdk
 export PATH=$ANDROID_HOME/platform-tools:$PATH
