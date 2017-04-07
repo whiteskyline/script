@@ -41,8 +41,14 @@ function draw_image()
 #
 function relay()
 {
-    ssh linmingxing@relay.xiaomi.com
+    ssh linmingxing@10.6.131.79
 }
+
+function env_test()
+{
+    ssh tiger@10.4.21.116
+}
+
 
 #
 # alias for ipa

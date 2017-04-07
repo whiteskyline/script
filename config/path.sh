@@ -38,14 +38,14 @@ export PATH=$SCALA_HOME/bin:$PATH
 #
 # JAVA Env Init
 #
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
-export PATH=$JAVA_HOME/bin:$PATH
-export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export J_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/Current
+export PATH=$J_HOME/Commands:$PATH
+# export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
 #
 # Maven Env Init
 #
-export MAVEN_HOME=/Users/horizon/soft/package/maven
+export MAVEN_HOME=/Users/horizon/soft/package/apache-maven
 export PATH=$MAVEN_HOME/bin:$PATH
 
 #
@@ -57,7 +57,7 @@ export PATH=$MYSQL_HOME/bin:$PATH
 #
 # Python Env Init
 #
-export PYTHON_HOME=/System/Library/Frameworks/Python.framework/Versions/Current
+export PYTHON_HOME=/Library/Frameworks/Python.framework/Versions/2.7
 export PATH=$PYTHON_HOME/bin:$PATH
 
 #

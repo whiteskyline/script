@@ -55,5 +55,11 @@ function go()
     cdd /Users/horizon/script
   elif [[ $1 == "nginx" ]]; then
     cdd /Users/horizon/soft/package/openresty/nginx
+  elif [[ $1 == "mersea" ]]; then
+    cdd /Users/horizon/source/company/mersea
+  elif [[ $1 == "callcenter" ]]; then
+    cdd /Users/horizon/source/company/callcenter
+  elif [[ $1 == "logs" ]]; then
+    cdd /Users/horizon/data/logs
   fi
 }

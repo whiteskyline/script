@@ -25,3 +25,4 @@ source ./zk.sh
 source ./mvn.sh
 source ./alias.sh
 source ./sbt.sh
+source /usr/local/git/contrib/completion/git-completion.bash
