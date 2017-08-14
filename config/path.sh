@@ -69,7 +69,7 @@ export PATH=$GRADLE_HOME/bin:$PATH
 #
 # Node.js Env Init
 #
-export NODEJS_HOME=/Users/horizon/soft/package/nodejs
+export NODEJS_HOME=/Users/horizon/soft/package/node
 export PATH=$NODEJS_HOME/bin:$PATH
 
 #
@@ -105,7 +105,7 @@ export PATH=$REPO_HOME/bin:$PATH
 #
 #
 #
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 
 export GRADLE_HOME=/Users/horizon/soft/package/gradle
 export PATH=$GRADLE_HOME/bin:$PATH
