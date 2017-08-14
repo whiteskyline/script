@@ -35,7 +35,7 @@ alias cdp="print_path_history"
 alias cdn="go_path_history"
 alias cdd="newcd"
 
-function go()
+function goto()
 {
   if [[ $1 == "source" ]]; then
     cdd /Users/horizon/source
@@ -54,7 +54,7 @@ function go()
   elif [[ $1 == "script" ]]; then
     cdd /Users/horizon/script
   elif [[ $1 == "nginx" ]]; then
-    cdd /Users/horizon/soft/package/openresty/nginx
+    cdd /Users/horizon/soft/package/nginx
   elif [[ $1 == "mersea" ]]; then
     cdd /Users/horizon/source/company/mersea
   elif [[ $1 == "callcenter" ]]; then

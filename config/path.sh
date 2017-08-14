@@ -94,6 +94,9 @@ export PATH=$PROTOBUF_HOME/bin:$PATH
 # Nginx Env Unit
 #
 export NGINX_HOME=/Users/horizon/soft/package/openresty/nginx
+if [ ! -d $NGINX_HOME ]; then
+    export NGINX_HOME=/Users/horizon/soft/package/nginx
+fi
 export PATH=$NGINX_HOME/sbin:$PATH
 
 #
@@ -112,3 +115,15 @@ export PATH=$GRADLE_HOME/bin:$PATH
 
 export ANDROID_HOME=/Users/horizon/soft/package/android-sdk
 export PATH=$ANDROID_HOME/platform-tools:$PATH
+
+#
+# add push online
+#
+export PUSHONLINE_HOME=/Users/horizon/soft/package/pushonline
+export PATH=$PUSHONLINE_HOME/:$PATH
+
+#
+# add ffmpeg path
+#
+export FFMPEG_HOME=/Users/horizon/soft/package/ffmpeg
+export PATH=$FFMPEG_HOME/bin:$PATH
