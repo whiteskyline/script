@@ -127,3 +127,9 @@ export PATH=$PUSHONLINE_HOME/:$PATH
 #
 export FFMPEG_HOME=/Users/horizon/soft/package/ffmpeg
 export PATH=$FFMPEG_HOME/bin:$PATH
+
+#
+# add apache cassandra path
+#
+export CASSANDRA_HOME=/Users/horizon/soft/package/apache-cassandra
+export PATH=$CASSANDRA_HOME/bin:$PATH
