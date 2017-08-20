@@ -68,6 +68,15 @@ function tcat() {
         return 1
     fi
 
+    if [[ "$1" == "start-debug" ]]; then
+        /Users/horizon/soft/package/apache-tomcat/bin/startup.sh debug
+        return 1
+    fi
+
+    if [[ "$1" == "runlog" ]]; then
+        tail -f /Users/horizon/soft/package/apache-tomcat/logs/localhost.`date +%Y-%m-%d`.log
+    fi
+
     if [[ "$1" == "log" ]]; then
         tail -f /Users/horizon/soft/package/apache-tomcat/logs/catalina.out
         return 1
@@ -86,12 +95,9 @@ function tcat() {
 #
 alias ip="ifconfig"
 alias draw="draw_image"
-alias goonebox="ssh root@oneboxhost"
 alias godesktop="ssh root@desktop"
-alias goec2="ssh root@120.26.46.145"
-alias goks="echo 0okm@xiaomi && ssh 101.71.27.139 -l rd"
-alias gowebus="ssh root@118.178.234.162"
-alias goksroot="echo XlOg5P2z4u && ssh 101.71.27.139 -l root"
+alias gohost="ssh root@47.92.27.223"
+alias gowork="ssh work@47.92.27.223"
 alias sb="open -a '/Applications/Sublime Text.app'"
 alias chrome="open -a 'Google Chrome' --args --disable-web-security --user-data-dir='/Users/horizon/data_st/soft/chrome'" 
 alias antlr4='java -Xmx500M -cp "/Users/horizon/src_st/open/antlrtest/antlr-4.5-complete.jar" org.antlr.v4.Tool'
