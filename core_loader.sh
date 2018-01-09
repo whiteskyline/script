@@ -22,7 +22,8 @@
 #
 # set env base value
 #
-export CORE_BASE_DIR="/Users/horizon/script"
+export HOME_DIR="/home/linmingxing"
+export CORE_BASE_DIR="$HOME_DIR/script"
 
 #
 # 载入每个模块
@@ -42,7 +43,8 @@ function load_module()
 #
 # 初始化每个模块用到的
 #
-MODULES=(`find $CORE_BASE_DIR -d 2 -name "loader.support" -exec echo {} \;`)
+echo "find $CORE_BASE_DIR -maxdepth 2 -name "loader.support" -exec echo {} \;"
+MODULES=(`find $CORE_BASE_DIR -maxdepth 2 -name "loader.support" -exec echo {} \;`)
 for module in ${MODULES[@]};
 do
 	load_module $module
