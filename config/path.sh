@@ -133,3 +133,8 @@ export PATH=$FFMPEG_HOME/bin:$PATH
 #
 export CASSANDRA_HOME=/Users/horizon/soft/package/apache-cassandra
 export PATH=$CASSANDRA_HOME/bin:$PATH
+
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=/Users/horizon/source/company/go
+export PATH=$PATH:$GOPATH/bin

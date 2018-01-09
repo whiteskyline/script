@@ -44,6 +44,11 @@ function relay()
     ssh linmingxing@10.6.131.79
 }
 
+function dyrl()
+{
+    ssh linmingxing@10.3.23.41
+}
+
 function env_test()
 {
     ssh tiger@10.4.21.116
@@ -113,3 +118,18 @@ function genand() {
 alias pc="pbcopy"
 alias sc="screencapture -s -c"
 alias hy="history"
+
+function runmusic() {
+    cd /Users/horizon/source/company/flipagram-platform/output
+    java -jar flipagram-music-platform-api-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
+    cd -
+}
+
+function mvnmini() {
+    target_project=$1
+    mvn -T4 -DskipTests -am -pl $target_project clean package
+}
+
+function mcmvn() {
+    mvn -s /Users/horizon/source/company/musicly.ly/.m2/settings.xml $@
+}
