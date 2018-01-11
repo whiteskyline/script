@@ -25,3 +25,4 @@ source ./zk.sh
 source ./mvn.sh
 source ./alias.sh
 source ./sbt.sh
+source ./dev_machine_script.sh
