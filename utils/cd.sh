@@ -66,14 +66,3 @@ function goto()
 
 DEV_HOME=/data01/users/linmingxing
 
-function devgo() {
-	AWEME_REPOS=$DEV_HOME/repos/toutiao/aweme
-	if [[ $1 == "logs" ]]; then
-		cd $AWEME_REPOS/log
-	elif [[ $1 == "api" ]]; then
-		cd $AWEME_REPOS/app/api/
-	elif [[ $1 == "notice" ]]; then
-		cd  $AWEME_REPOS/app/service/notice
-	fi
-	
-}
