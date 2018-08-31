@@ -18,6 +18,17 @@ function unit_test() {
 	cd $CURRENT_DIR
 }
 
+function dev_debug() {
+	if [[ $1 == "api_feed" ]]; then
+		export IS_TEST_ENV="True"
+		cd $BASE_DIR && runtime/bin/python app/api_feed/manage.py shell
+	elif [[ $1 == "bs_search" ]]; then
+		cd $BASE_DIR/app/bs_search && ../../runtime/bin/python bs_search_api/manage.py shell
+	elif [[ $1 == "admin" ]]; then
+		cd $BASE_DIR/app/admin && ../../runtime/bin/python manage.py shell
+	fi
+}
+
 function dev_start() {
 	CURRENT_DIR=`pwd`
 	BASE_DIR=~/repos/toutiao/aweme
@@ -25,10 +36,19 @@ function dev_start() {
 		cd $BASE_DIR && runtime/bin/python app/api/bootstrap.py 9320
 	elif [[ $1 == "admin" ]]; then
 		cd $BASE_DIR && runtime/bin/python app/admin/bootstrap.py 10020
+	elif [[ $1 == "model_update" ]]; then
+		cd $BASE_DIR && runtime/bin/python app/douyin_cip/model_update/send_data_tpl.py
+	elif [[ $1 == "message" ]]; then
+		cd $BASE_DIR && runtime/bin/python app/douyin_cip/util/send_data_tpl.py
 	elif [[ $1 == "bs_user" ]]; then
 		cd $BASE_DIR/app/bs_user && ../../runtime/bin/python bs_user_api/bootstrap.py 9520
+	elif [[ $1 == "bs_aweme" ]]; then
+		cd $BASE_DIR/app/bs_aweme && ../../runtime/bin/python bs_aweme_api/bootstrap.py 9720
 	elif [[ $1 == "bs_main" ]]; then
 		cd $BASE_DIR/app/bs_main && ../../runtime/bin/python bs_main_api/bootstrap.py 9920
+	elif [[ $1 == "bs_search" ]]; then
+		export IS_TEST_ENV="True"
+		cd $BASE_DIR/app/bs_search && ../../runtime/bin/python bs_search_api/bootstrap.py 9930
 	elif [[ $1 == "api_feed" ]]; then
 		export IS_TEST_ENV="True"
 		cd $BASE_DIR && runtime/bin/python app/api_feed/bootstrap.py 9620
@@ -109,6 +129,10 @@ function dev_go() {
 		cd /data01/users/linmingxing/repos/toutiao/aweme/app/api_common
 	elif [[ $1 == "api_feed" ]]; then
 		cd /data01/users/linmingxing/repos/toutiao/aweme/app/api_feed
+	elif [[ $1 == "bs_main" ]]; then
+		cd /data01/users/linmingxing/repos/toutiao/aweme/app/bs_main
+	elif [[ $1 == "bs_user" ]]; then
+		cd /data01/users/linmingxing/repos/toutiao/aweme/app/bs_user
 	fi
 }
 
