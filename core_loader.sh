@@ -22,7 +22,12 @@
 #
 # set env base value
 #
-export HOME_DIR="/home/linmingxing"
+if [ `uname` = 'Darwin' ]
+then
+	export HOME_DIR="/Users/horizon"
+else
+	export HOME_DIR="/homw/linmingxing"
+fi
 export CORE_BASE_DIR="$HOME_DIR/script"
 
 #
