@@ -26,7 +26,7 @@ if [ `uname` = 'Darwin' ]
 then
 	export HOME_DIR="/Users/horizon"
 else
-	export HOME_DIR="/homw/linmingxing"
+	export HOME_DIR="/data00/linmingxing"
 fi
 export CORE_BASE_DIR="$HOME_DIR/script"
 

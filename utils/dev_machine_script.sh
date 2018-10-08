@@ -4,7 +4,7 @@
 
 function script_test() {
 	CURRENT_DIR=`pwd`
-	BASE_DIR=~/repos/toutiao/aweme
+	BASE_DIR=~/repos/aweme
 	SCRIPT_DIR=$1
 	cd $BASE_DIR && runtime/bin/python app/aweme_scripts/$SCRIPT_DIR/handler.py
 	cd $CURRENT_DIR
@@ -31,7 +31,7 @@ function dev_debug() {
 
 function dev_start() {
 	CURRENT_DIR=`pwd`
-	BASE_DIR=~/repos/toutiao/aweme
+	BASE_DIR=~/repos/aweme
 	if [[ $1 == "api" ]]; then
 		cd $BASE_DIR && runtime/bin/python app/api/bootstrap.py 9320
 	elif [[ $1 == "admin" ]]; then
@@ -110,7 +110,7 @@ export BASE_DIR=~/repos/toutiao/aweme
 alias dev_py="$BASE_DIR/runtime/bin/python"
 
 function dev_go() {
-	BASE_DIR=~/repos/toutiao/aweme
+	BASE_DIR=~/repos/aweme
 	if [[ $1 == "logs" ]]; then
 		cd $BASE_DIR/log
 	elif [[ $1 == "api" ]]; then
