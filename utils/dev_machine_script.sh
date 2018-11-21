@@ -29,6 +29,17 @@ function dev_debug() {
 	fi
 }
 
+function dev_test() {
+	CURRENT_DIR=`pwd`
+	BASE_DIR=~/repos/toutiao/aweme
+	if [[ $1 == "hotsearch" ]]; then
+		cd $BASE_DIR/app/comp_hotsearch_service && ../../runtime/bin/python unittests/test.py
+	fi
+	cd $CURRENT_DIR
+}
+
+alias cpy='/data01/users/linmingxing/repos/toutiao/aweme/runtime/bin/python'
+
 function dev_start() {
 	CURRENT_DIR=`pwd`
 	BASE_DIR=~/repos/toutiao/aweme
@@ -36,6 +47,8 @@ function dev_start() {
 		cd $BASE_DIR && runtime/bin/python app/api/bootstrap.py 9320
 	elif [[ $1 == "admin" ]]; then
 		cd $BASE_DIR && runtime/bin/python app/admin/bootstrap.py 10020
+	elif [[ $1 == "hotsearch" ]]; then
+		cd $BASE_DIR && runtime/bin/python app/comp_hotsearch_service/bootstrap.py
 	elif [[ $1 == "model_update" ]]; then
 		cd $BASE_DIR && runtime/bin/python app/douyin_cip/model_update/send_data_tpl.py
 	elif [[ $1 == "message" ]]; then
