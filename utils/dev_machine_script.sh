@@ -56,6 +56,8 @@ function dev_start() {
 		cd $BASE_DIR && runtime/bin/python app/service/notice/bootstrap.py 10220
 	elif [[ $1 == "user" ]]; then
 		cd $BASE_DIR && runtime/bin/python app/service/user/bootstrap.py 10205
+	elif [[ $1 == "golink" ]]; then
+		cd /home/linmingxing/source/company/go/src/code.byted.org/aweme/golink && output/bin/ies.link.golink  -conf=output/conf/ies_link_golink.yml -svc=ies.link.golink -port=9090
 	elif [[ $1 == "notice_async" ]]; then
 		cd  $BASE_DIR/app/aweme_scripts/aweme_notice_async_db && ./bootstrap.sh /home/linmingxing/repos/toutiao/aweme/
 	elif [[ $1 == "gouser_async" ]]; then
