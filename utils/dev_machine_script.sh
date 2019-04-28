@@ -31,7 +31,7 @@ function dev_debug() {
 
 function dev_test() {
 	CURRENT_DIR=`pwd`
-	BASE_DIR=~/repos/toutiao/aweme
+	BASE_DIR=~/repos/aweme
 	if [[ $1 == "hotsearch" ]]; then
 		cd $BASE_DIR/app/comp_hotsearch_service && ../../runtime/bin/python unittests/test.py
 	fi
@@ -94,19 +94,35 @@ function dev_start() {
 		cd  $BASE_DIR/app/aweme_scripts/notice_manual_db_sync && ./bootstrap.sh /home/linmingxing/repos/toutiao/aweme/
 	elif [[ $1 == "notice_offline_delete" ]]; then
 		cd  $BASE_DIR/app/aweme_scripts/notice_offline_delete && ./bootstrap.sh /home/linmingxing/repos/toutiao/aweme/
+	elif [[ $1 == "user_db_event_sync" ]]; then
+		cd  $BASE_DIR/app/bs_user_scripts/user_db_event_profile_sync && ./bootstrap.sh $BASE_DIR
+	elif [[ $1 == "user_db_full_sync" ]]; then
+		cd  $BASE_DIR/app/bs_user_scripts/user_full_profile_sync && ./bootstrap.sh $BASE_DIR
+	elif [[ $1 == "user_hot_sync" ]]; then
+		cd  $BASE_DIR/app/bs_user_scripts/user_db_make_hot && ./bootstrap.sh $BASE_DIR
+	elif [[ $1 == "user_db_event_delete_cache" ]]; then
+		cd  $BASE_DIR/app/bs_user_scripts/user_db_event_delete_cache/ && ./bootstrap.sh $BASE_DIR
 	elif [[  $1 == "gouser" ]]; then
-		cd /data01/users/linmingxing/source/company/go/src/code.byted.org/aweme/gouser && output/bin/aweme.user.gouser  -conf=output/conf/aweme_user_gouser.yml -rpc=/data01/users/linmingxing/repos/toutiao/aweme/conf -svc=aweme.user.gouser -port=9090
+		export cluster_specified_config="data"
+		export SERVICE_CLUSTER="data"
+		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/gouser && output/bootstrap.sh
+	elif [[  $1 == "gomain" ]]; then
+		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/gomain_api && output/bootstrap.sh
+	elif [[  $1 == "gofeed" ]]; then
+		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/gofeed_api && output/bootstrap.sh
+	elif [[  $1 == "gocommerce" ]]; then
+		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/goapi_commerce && output/bootstrap.sh
 	elif [[ $1 == "gouser_debug" ]]; then
 		cd /data01/users/linmingxing/source/company/go/src/code.byted.org/aweme/gouser && output/bootstrap.sh
 	elif [[  $1 == "review" ]]; then
 		unset CONF_ENV
 		cd /data01/users/linmingxing/source/company/go/src/code.byted.org/aweme/review && output/bin/aweme.review.review  -conf=output/conf/aweme_review_review.yml -rpc=/data01/users/linmingxing/repos/toutiao/aweme/conf -svc=aweme.review.review -port=10400
 	elif [[  $1 == "goapi" ]]; then
-		cd /data01/users/linmingxing/source/company/go/src/code.byted.org/aweme/goapi/output && ./bootstrap.sh
+		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/goapi/output && ./bootstrap.sh
 	elif [[  $1 == "golink" ]]; then
-		cd /data01/users/linmingxing/source/company/go/src/code.byted.org/aweme/golink && output/bin/aweme.link.golink -conf=output/conf/aweme_link_golink.yml -rpc=/data01/users/linmingxing/repos/toutiao/aweme/conf -log=/tmp/log/ -svc=aweme.link.golink -port=
+		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/golink && output/bin/aweme.link.golink -conf=output/conf/aweme_link_golink.yml -rpc=$HOME_DIR/repos/toutiao/aweme/conf -log=/tmp/log/ -svc=aweme.link.golink -port=
 	elif [[  $1 == "user_cert" ]]; then
-		cd /data01/users/linmingxing/source/company/go/src/code.byted.org/aweme/user_cert && output/bin/aweme.user.cert -conf=output/conf/aweme_user_cert.yml -rpc=/data01/users/linmingxing/repos/toutiao/aweme/conf -svc=aweme.user.cert -port=
+		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/user_cert && output/bin/aweme.user.cert -conf=output/conf/aweme_user_cert.yml -rpc=$HOME_DIR/repos/toutiao/aweme/conf -svc=aweme.user.cert -port=
 	elif [[ $1 == "shell" ]]; then
 		if [[ $# -gt 2 ]]; then
 			echo "maybe these scripts will help you."
@@ -121,7 +137,7 @@ function dev_start() {
 	cd $CURRENT_DIR
 }
 
-export BASE_DIR=~/repos/toutiao/aweme
+export BASE_DIR=~/repos/aweme
 alias dev_py="$BASE_DIR/runtime/bin/python"
 
 function dev_go() {
@@ -129,19 +145,21 @@ function dev_go() {
 	if [[ $1 == "logs" ]]; then
 		cd $BASE_DIR/log
 	elif [[ $1 == "api" ]]; then
-		cd /data01/users/linmingxing/repos/toutiao/aweme/app/api
+		cd $HOME_DIR/repos/toutiao/aweme/app/api
 	elif [[ $1 == "gouser" ]]; then
-		cd /data01/users/linmingxing/source/company/go/src/code.byted.org/aweme/gouser 
+		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/gouser 
 	elif [[ $1 == "golink" ]]; then
-		cd /data01/users/linmingxing/source/company/go/src/code.byted.org/aweme/golink
+		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/golink
 	elif [[ $1 == "notice" ]]; then
 		cd /data01/users/linmingxing/repos/toutiao/aweme/app/service/notice
 	elif [[ $1 == "aweme_scripts" ]]; then
-		cd /data01/users/linmingxing/repos/toutiao/aweme/app/aweme_scripts
+		cd $BASE_DIR/app/aweme_scripts
 	elif [[ $1 == "common" ]]; then
-		cd /data01/users/linmingxing/repos/toutiao/aweme/app/common
+		cd $BASE_DIR/app/common
 	elif [[ $1 == "api_common" ]]; then
-		cd /data01/users/linmingxing/repos/toutiao/aweme/app/api_common
+		cd $BASE_DIR/app/api_common
+	elif [[ $1 == "idl" ]]; then
+		cd $BASE_DIR/lib/idl/
 	elif [[ $1 == "api_feed" ]]; then
 		cd /data01/users/linmingxing/repos/toutiao/aweme/app/api_feed
 	elif [[ $1 == "bs_main" ]]; then
@@ -152,3 +170,4 @@ function dev_go() {
 }
 
 export TEST_ENV=True
+alias py="/home/linmingxing/repos/aweme/runtime/bin/python"

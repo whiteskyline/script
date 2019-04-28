@@ -119,17 +119,8 @@ alias pc="pbcopy"
 alias sc="screencapture -s -c"
 alias hy="history"
 
-function runmusic() {
-    cd /Users/horizon/source/company/flipagram-platform/output
-    java -jar flipagram-music-platform-api-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
-    cd -
-}
-
 function mvnmini() {
     target_project=$1
     mvn -T4 -DskipTests -am -pl $target_project clean package
 }
 
-function mcmvn() {
-    mvn -s /Users/horizon/source/company/musicly.ly/.m2/settings.xml $@
-}

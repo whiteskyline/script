@@ -30,3 +30,14 @@ function gitreview() {
     echo target_branch:$branch_name
     git push origin HEAD:refs/for/$branch_name
 }
+
+function gitsource () {
+    echo "[info] current branch list:"
+    git br
+    if [ $? -ne 0 ]
+    then
+        echo "[warning] current directory is not git repo."
+    fi
+    current_branch=`git br | grep \* | awk '{print $2}'`
+    git branch --set-upstream-to=origin/$current_branch $current_branch
+}
