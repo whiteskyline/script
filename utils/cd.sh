@@ -41,6 +41,8 @@ function goto()
     cdd /Users/horizon/source
   elif [[ $1 == "video" ]]; then
     cdd /Users/horizon/src_st/video-stream
+  elif [[ $1 == "home" ]]; then
+    cdd /Users/horizon/
   elif [[ $1 == "keycenter" ]]; then
     cdd /Users/horizon/src_st/keycenter
   elif [[ $1 == "gemini" ]]; then

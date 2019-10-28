@@ -44,57 +44,6 @@ function relay()
     ssh linmingxing@10.6.131.79
 }
 
-function dyrl()
-{
-    ssh linmingxing@10.3.23.41
-}
-
-function env_test()
-{
-    ssh tiger@10.4.21.116
-}
-
-#
-# tomcat 快捷命令
-#
-function tcat() {
-    if [[ $# -lt 1 ]]; then
-        echo "no command is given."
-        return 1
-    fi
-
-    if [[ "$1" == "start" ]]; then
-        /Users/horizon/soft/package/apache-tomcat/bin/startup.sh
-        return 1
-    fi    
-
-    if [[ "$1" == "stop" ]]; then
-        /Users/horizon/soft/package/apache-tomcat/bin/shutdown.sh
-        return 1
-    fi
-
-    if [[ "$1" == "start-debug" ]]; then
-        /Users/horizon/soft/package/apache-tomcat/bin/startup.sh debug
-        return 1
-    fi
-
-    if [[ "$1" == "runlog" ]]; then
-        tail -f /Users/horizon/soft/package/apache-tomcat/logs/localhost.`date +%Y-%m-%d`.log
-    fi
-
-    if [[ "$1" == "log" ]]; then
-        tail -f /Users/horizon/soft/package/apache-tomcat/logs/catalina.out
-        return 1
-    fi
-
-    if [[ "$1" == "access" ]]; then
-        tail -f /Users/horizon/soft/package/apache-tomcat/logs/localhost_access_log.`date +%Y-%m-%d`.txt
-        return 1
-    fi
-
-}
-
-
 #
 # alias for ipa
 #
