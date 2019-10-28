@@ -138,3 +138,5 @@ export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 export GOPATH=/Users/horizon/source/company/go
 export PATH=$PATH:$GOPATH/bin
+export DOASROOT=$HOME_DIR/soft/package/doas
+export PATH=$PATH:$DOASROOT

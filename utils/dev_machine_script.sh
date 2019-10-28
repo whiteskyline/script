@@ -110,6 +110,14 @@ function dev_start() {
 		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/gomain_api && output/bootstrap.sh
 	elif [[  $1 == "gofeed" ]]; then
 		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/gofeed_api && output/bootstrap.sh
+	elif [[  $1 == "godiscovery" ]]; then
+		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/godiscovery_api && output/bootstrap.sh
+	elif [[  $1 == "gosearch" ]]; then
+		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/gosearch_api && doas -p aweme.api.gosearch output/bootstrap.sh
+	elif [[  $1 == "im_resource" ]]; then
+		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme_im/im_resource && doas -p toutiao.im.im_resource output/bootstrap.sh
+	elif [[  $1 == "im_api" ]]; then
+		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme_im/im_api && doas -p aweme.api.goim output/bootstrap.sh
 	elif [[  $1 == "gocommerce" ]]; then
 		cd $HOME_DIR/source/company/go/src/code.byted.org/aweme/goapi_commerce && output/bootstrap.sh
 	elif [[ $1 == "gouser_debug" ]]; then
@@ -167,6 +175,18 @@ function dev_go() {
 	elif [[ $1 == "bs_user" ]]; then
 		cd /data01/users/linmingxing/repos/toutiao/aweme/app/bs_user
 	fi
+}
+
+function switch_go() {
+    current_dir=`pwd`
+    if [[ $1 == "byted" ]]; then
+        cd /opt/tiger/go && rm go 
+        cd /opt/tiger/go && ln -s go1.12-byted go
+    elif [[ $1 == "global" ]]; then
+        cd /opt/tiger/go && rm go
+        cd /opt/tiger/go && ln -s go1.12.1 go   
+    fi
+    cd $current_dir
 }
 
 export TEST_ENV=True
