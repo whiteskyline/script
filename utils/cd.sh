@@ -65,6 +65,3 @@ function goto()
     cdd /Users/horizon/data/logs
   fi
 }
-
-DEV_HOME=/data01/users/linmingxing
-
