@@ -57,6 +57,7 @@ alias chrome="open -a 'Google Chrome' --args --disable-web-security --user-data-
 alias antlr4='java -Xmx500M -cp "/Users/horizon/src_st/open/antlrtest/antlr-4.5-complete.jar" org.antlr.v4.Tool'
 alias antlr3='java -Xmx500M -cp "/Users/horizon/src_st/open/antlrtest/antlr-3.5.2-complete.jar" org.antlr.Tool'
 alias grun='java org.antlr.v4.runtime.misc.TestRig'
+alias gitlog='git log | more'
 
 function genand() {
     rm -rf gene

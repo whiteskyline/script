@@ -29,3 +29,4 @@ source ./dev_machine_script.sh
 source ./nginx.sh
 source ./go.sh
 source ./dev_info.sh
+source ./relay.sh
