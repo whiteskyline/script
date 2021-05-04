@@ -191,3 +191,6 @@ function switch_go() {
 
 export TEST_ENV=True
 alias py="/home/linmingxing/repos/aweme/runtime/bin/python"
+function ki() {
+    kinit linmingxing@BYTEDANCE.COM
+}

@@ -4,7 +4,7 @@
 
 function devrl() 
 {
-    ssh linmingxing@10.224.25.25
+    ssh linmingxing@10.248.140.20
 }
 
 function murl()

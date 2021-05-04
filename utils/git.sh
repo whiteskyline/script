@@ -42,3 +42,14 @@ function gitsource () {
     current_branch=`git br | grep \* | awk '{print $2}'`
     git branch --set-upstream-to=origin/$current_branch $current_branch
 }
+
+function gitclean() {
+    echo "[info] current branch list:"
+    git br
+    git br | grep -v master | xargs git br -d
+}
+
+# 返回最后几条提交信息
+function gitlast() {
+    git log | head -n 24
+}

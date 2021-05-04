@@ -63,5 +63,7 @@ function goto()
     cdd /Users/horizon/source/company/callcenter
   elif [[ $1 == "logs" ]]; then
     cdd /Users/horizon/data/logs
+  elif [[ $1 == "worklog" ]]; then
+    cdd /Users/horizon/source/personal/bitbar_plugin/log
   fi
 }

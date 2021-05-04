@@ -9,6 +9,7 @@ export GONOPROXY=code.byted.org,gitlab.everphoto.cn,git.byted.org,sysrepo.byted.
 export GOPROXY="https://go-mod-proxy.byted.org"
 export GO111MODULE=on
 export GOPRIVATE='*byted.org'
+export GOSUMDB=off
 
 function switch_go()
 {
@@ -22,6 +23,9 @@ function switch_go()
     elif [[ $1 == "global.13" ]]; then
         cd $DEV_HOME/soft/package/ && rm -f go
         cd $DEV_HOME/soft/package/ && ln -s go.global.1.13.12 go
+    elif [[ $1 == "global.14" ]]; then
+        cd $DEV_HOME/soft/package/ && rm -f go
+        cd $DEV_HOME/soft/package/ && ln -s go.global.1.14.13 go
     fi
     cd $current_dir
 }

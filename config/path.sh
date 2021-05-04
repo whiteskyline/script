@@ -126,7 +126,7 @@ export PATH=$PUSHONLINE_HOME/:$PATH
 # add ffmpeg path
 #
 export FFMPEG_HOME=/Users/horizon/soft/package/ffmpeg
-export PATH=$FFMPEG_HOME/bin:$PATH
+export PATH=$FFMPEG_HOME:$PATH
 
 #
 # add apache cassandra path
@@ -140,3 +140,5 @@ export GOPATH=/Users/horizon/source/company/go
 export PATH=$PATH:$GOPATH/bin
 export DOASROOT=$HOME_DIR/soft/package/doas
 export PATH=$PATH:$DOASROOT
+export BISONROOT=/usr/local/Cellar/bison/3.7.6/bin
+export PATH=$BISONROOT:$PATH
