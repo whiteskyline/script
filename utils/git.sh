@@ -17,20 +17,11 @@
 #      REVISION:  ---
 #===============================================================================
 
-alias gitv="open /Applications/GitHub\ Desktop.app"
+alias gitv="open /Applications/Sourcetree.app"
 alias gitg="git log --graph --decorate --oneline"
-alias stc="sh /Users/horizon/core/status-check.sh"
 alias gitall="git log --graph --decorate --oneline --simplify-by-decoration --all"
 alias git="git -P"
-function gitreview() {
-    if [ $# -lt 1  ]; then
-        echo "no target branch is given"
-        return
-    fi
-    branch_name=$1
-    echo target_branch:$branch_name
-    git push origin HEAD:refs/for/$branch_name
-}
+alias gitlog='git log | more'
 
 function gitsource () {
     echo "[info] current branch list:"
@@ -46,7 +37,7 @@ function gitsource () {
 function gitclean() {
     echo "[info] current branch list:"
     git br
-    git br | grep -v master | xargs git br -d
+    git br | grep -v * | grep -v master | xargs git br -d
 }
 
 # 返回最后几条提交信息

@@ -1,0 +1,22 @@
+--- 命令帮助列表 ---
+st:                 设置命令行标题          title
+devrl:              登陆开发机                
+pac_ngxix:          启动nginx               proxy|direct
+mysqld_safe:        安全启动msql        
+mysqladmin:         登陆admin用户        
+mysql:              直接启动mysql             
+switch_go:          切换go版本              byted|global|global.13|global.14
+gitv:               打开Sourcetree             
+gitg:               完整命令行打印版本树       
+gitall:             版本关系命令行树         
+gitsource:          设置版本追踪远程      
+gitclean:           批量删除本地已合并分支 
+dev_go:             开发机到特定开发目录    logs|api|common|api_common|idl|api_feed|bs_main|bs_user
+py:                 Python执行                   
+print_dev:          打印开发机用户信息    
+goto:               去到某个工作目录        source|video|home|doc|soft|script|nginx|worklog
+cdd:                带有访问记录的cd        path
+cdn:                访问指定位置记录        number
+cdp:                显示访问记录                
+gitlog:             普通方式展示git日志      
+ip:                 打印IP列表                   

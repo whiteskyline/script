@@ -37,39 +37,11 @@ function draw_image()
 }
 
 #
-# relay functions
-#
-function relay()
-{
-    ssh linmingxing@10.6.131.79
-}
-
-#
 # alias for ipa
 #
 alias ip="ifconfig"
 alias draw="draw_image"
-alias godesktop="ssh root@desktop"
-alias gohost="ssh root@47.92.27.223"
-alias gowork="ssh work@47.92.27.223"
-alias sb="open -a '/Applications/Sublime Text.app'"
-alias chrome="open -a 'Google Chrome' --args --disable-web-security --user-data-dir='/Users/horizon/data_st/soft/chrome'" 
-alias antlr4='java -Xmx500M -cp "/Users/horizon/src_st/open/antlrtest/antlr-4.5-complete.jar" org.antlr.v4.Tool'
-alias antlr3='java -Xmx500M -cp "/Users/horizon/src_st/open/antlrtest/antlr-3.5.2-complete.jar" org.antlr.Tool'
-alias grun='java org.antlr.v4.runtime.misc.TestRig'
-alias gitlog='git log | more'
-
-function genand() {
-    rm -rf gene
-    gen $1 android * * gene
-} 
 
 alias pc="pbcopy"
 alias sc="screencapture -s -c"
 alias hy="history"
-
-function mvnmini() {
-    target_project=$1
-    mvn -T4 -DskipTests -am -pl $target_project clean package
-}
-

@@ -43,12 +43,6 @@ function goto()
     cdd /Users/horizon/src_st/video-stream
   elif [[ $1 == "home" ]]; then
     cdd /Users/horizon/
-  elif [[ $1 == "keycenter" ]]; then
-    cdd /Users/horizon/src_st/keycenter
-  elif [[ $1 == "gemini" ]]; then
-    cdd /Users/horizon/src_st/open-sources/gemini
-  elif [[ $1 == "info" ]]; then
-    cdd /Users/horizon/script_st/info_st/
   elif [[ $1 == "doc" ]]; then
     cdd /Users/horizon/src_st/documents/
   elif [[ $1 == "soft" ]]; then
@@ -57,12 +51,6 @@ function goto()
     cdd /Users/horizon/script
   elif [[ $1 == "nginx" ]]; then
     cdd /Users/horizon/soft/package/nginx
-  elif [[ $1 == "mersea" ]]; then
-    cdd /Users/horizon/source/company/mersea
-  elif [[ $1 == "callcenter" ]]; then
-    cdd /Users/horizon/source/company/callcenter
-  elif [[ $1 == "logs" ]]; then
-    cdd /Users/horizon/data/logs
   elif [[ $1 == "worklog" ]]; then
     cdd /Users/horizon/source/personal/bitbar_plugin/log
   fi

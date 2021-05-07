@@ -40,6 +40,7 @@ function load_module()
 	CUR_DIR=`pwd`
 	cd $LM_BASE_DIR
 
+    export LM_BASE_DIR
 	source $MODULE
 
 	cd $CUR_DIR

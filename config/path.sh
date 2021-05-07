@@ -24,29 +24,10 @@ export THRIFT_HOME=/Users/horizon/soft/package/thrift
 export PATH=$THRIFT_HOME/bin:$PATH
 
 #
-# ARC Env Init
-#
-export ARC_HOME=/Users/horizon/soft/package/arcanist
-export PATH=$ARC_HOME/bin:$PATH
-
-#
-# Scala Env Init
-#
-export SCALA_HOME=/Users/horizon/soft/package/scala
-export PATH=$SCALA_HOME/bin:$PATH
-
-#
 # JAVA Env Init
 #
 export J_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/Current
 export PATH=$J_HOME/Commands:$PATH
-# export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-
-#
-# Maven Env Init
-#
-export MAVEN_HOME=/Users/horizon/soft/package/apache-maven
-export PATH=$MAVEN_HOME/bin:$PATH
 
 #
 # MySQL Env Init
@@ -61,28 +42,10 @@ export PYTHON_HOME=/Library/Frameworks/Python.framework/Versions/2.7
 export PATH=$PYTHON_HOME/bin:$PATH
 
 #
-# Gradle Env Init
-#
-export GRADLE_HOME=/Users/horizon/soft/package/gradle
-export PATH=$GRADLE_HOME/bin:$PATH
-
-#
 # Node.js Env Init
 #
 export NODEJS_HOME=/Users/horizon/soft/package/node
 export PATH=$NODEJS_HOME/bin:$PATH
-
-#
-# SBT Env Init
-#
-export SBT_HOME=/Users/horizon/soft/package/sbt
-export PATH=$SBT_HOME/bin:$PATH
-
-#
-# Ant Env Ini
-#
-export ANT_HOME=/Users/horizon/soft/package/ant
-export PATH=$ANT_HOME/bin:$PATH
 
 #
 # Protobuf Env Init
@@ -99,28 +62,9 @@ if [ ! -d $NGINX_HOME ]; then
 fi
 export PATH=$NGINX_HOME/sbin:$PATH
 
-#
-# REPO Env Init
-#
-export REPO_HOME=/Users/horizon/soft/package/repo
-export PATH=$REPO_HOME/bin:$PATH
 
-#
-#
 #
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
-
-export GRADLE_HOME=/Users/horizon/soft/package/gradle
-export PATH=$GRADLE_HOME/bin:$PATH
-
-export ANDROID_HOME=/Users/horizon/soft/package/android-sdk
-export PATH=$ANDROID_HOME/platform-tools:$PATH
-
-#
-# add push online
-#
-export PUSHONLINE_HOME=/Users/horizon/soft/package/pushonline
-export PATH=$PUSHONLINE_HOME/:$PATH
 
 #
 # add ffmpeg path
@@ -128,17 +72,5 @@ export PATH=$PUSHONLINE_HOME/:$PATH
 export FFMPEG_HOME=/Users/horizon/soft/package/ffmpeg
 export PATH=$FFMPEG_HOME:$PATH
 
-#
-# add apache cassandra path
-#
-export CASSANDRA_HOME=/Users/horizon/soft/package/apache-cassandra
-export PATH=$CASSANDRA_HOME/bin:$PATH
-
-export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin
 export GOPATH=/Users/horizon/source/company/go
 export PATH=$PATH:$GOPATH/bin
-export DOASROOT=$HOME_DIR/soft/package/doas
-export PATH=$PATH:$DOASROOT
-export BISONROOT=/usr/local/Cellar/bison/3.7.6/bin
-export PATH=$BISONROOT:$PATH
