@@ -18,12 +18,14 @@
 #===============================================================================
 
 source ./cd.sh
+source ./goto.sh
+source ./goprj.sh
 source ./mysql.sh
 source ./git.sh
 source ./st.sh
 source ./alias.sh
 source ./dev_machine_script.sh
 source ./nginx.sh
-source ./go.sh
+source ./golang.sh
 source ./dev_info.sh
 source ./relay.sh

@@ -15,8 +15,11 @@ dev_go:             开发机到特定开发目录    logs|api|common|api_common
 py:                 Python执行                   
 print_dev:          打印开发机用户信息    
 goto:               去到某个工作目录        source|video|home|doc|soft|script|nginx|worklog
+goprj:              去到某个项目目录        
 cdd:                带有访问记录的cd        path
 cdn:                访问指定位置记录        number
 cdp:                显示访问记录                
+cdr:                相对于开发Home目录跳转  relative_path
 gitlog:             普通方式展示git日志      
 ip:                 打印IP列表                   
+..n:                像父目录跳转            1

@@ -28,7 +28,8 @@ then
 else
 	export HOME_DIR="/home/linmingxing"
 fi
-export CORE_BASE_DIR="$HOME_DIR/script"
+export SCRIPT_BASE_DIR="$HOME_DIR/script"
+export SOURCE_BASE_DIR="$HOME_DIR/source"
 
 #
 # 载入每个模块
@@ -49,8 +50,8 @@ function load_module()
 #
 # 初始化每个模块用到的
 #
-# echo "find $CORE_BASE_DIR -maxdepth 2 -name "loader.support" -exec echo {} \;"
-MODULES=(`find $CORE_BASE_DIR -maxdepth 2 -name "loader.support" -exec echo {} \;`)
+# echo "find $SCRIPT_BASE_DIR -maxdepth 2 -name "loader.support" -exec echo {} \;"
+MODULES=(`find $SCRIPT_BASE_DIR -maxdepth 2 -name "loader.support" -exec echo {} \;`)
 for module in ${MODULES[@]};
 do
 	load_module $module
