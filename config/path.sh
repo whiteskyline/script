@@ -20,7 +20,7 @@
 #
 # Thrift Env Init
 #
-export THRIFT_HOME=/Users/horizon/soft/package/thrift
+export THRIFT_HOME=$HOME_DIR/soft/package/thrift
 export PATH=$THRIFT_HOME/bin:$PATH
 
 #
@@ -32,7 +32,7 @@ export PATH=$J_HOME/Commands:$PATH
 #
 # MySQL Env Init
 #
-export MYSQL_HOME=/Users/horizon/soft/package/mysql
+export MYSQL_HOME=$HOME_DIR/soft/package/mysql
 export PATH=$MYSQL_HOME/bin:$PATH
 
 #
@@ -44,21 +44,21 @@ export PATH=$PYTHON_HOME/bin:$PATH
 #
 # Node.js Env Init
 #
-export NODEJS_HOME=/Users/horizon/soft/package/node
+export NODEJS_HOME=$HOME_DIR/soft/package/node
 export PATH=$NODEJS_HOME/bin:$PATH
 
 #
 # Protobuf Env Init
 #
-export PROTOBUF_HOME=/Users/horizon/soft/package/protoc
+export PROTOBUF_HOME=$HOME_DIR/soft/package/protoc
 export PATH=$PROTOBUF_HOME/bin:$PATH
 
 #
 # Nginx Env Unit
 #
-export NGINX_HOME=/Users/horizon/soft/package/openresty/nginx
+export NGINX_HOME=$HOME_DIR/soft/package/openresty/nginx
 if [ ! -d $NGINX_HOME ]; then
-    export NGINX_HOME=/Users/horizon/soft/package/nginx
+    export NGINX_HOME=$HOME_DIR/soft/package/nginx
 fi
 export PATH=$NGINX_HOME/sbin:$PATH
 
@@ -69,8 +69,8 @@ export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 #
 # add ffmpeg path
 #
-export FFMPEG_HOME=/Users/horizon/soft/package/ffmpeg
+export FFMPEG_HOME=$HOME_DIR/soft/package/ffmpeg
 export PATH=$FFMPEG_HOME:$PATH
 
-export GOPATH=/Users/horizon/source/company/go
+export GOPATH=$HOME_DIR/source/company/go
 export PATH=$PATH:$GOPATH/bin

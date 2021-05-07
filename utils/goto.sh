@@ -2,20 +2,20 @@
 function goto()
 {
   if [[ $1 == "source" ]]; then
-    cdd /Users/horizon/source
+    cdd $HOME_DIR/source
   elif [[ $1 == "video" ]]; then
-    cdd /Users/horizon/src_st/video-stream
+    cdd $HOME_DIR/src_st/video-stream
   elif [[ $1 == "home" ]]; then
-    cdd /Users/horizon/
+    cdd $HOME_DIR/
   elif [[ $1 == "doc" ]]; then
-    cdd /Users/horizon/src_st/documents/
+    cdd $HOME_DIR/src_st/documents/
   elif [[ $1 == "soft" ]]; then
-    cdd /Users/horizon/soft/
+    cdd $HOME_DIR/soft/
   elif [[ $1 == "script" ]]; then
-    cdd /Users/horizon/script
+    cdd $HOME_DIR/script
   elif [[ $1 == "nginx" ]]; then
-    cdd /Users/horizon/soft/package/nginx
+    cdd $HOME_DIR/soft/package/nginx
   elif [[ $1 == "worklog" ]]; then
-    cdd /Users/horizon/source/personal/bitbar_plugin/log
+    cdd $HOME_DIR/source/personal/bitbar_plugin/log
   fi
 }

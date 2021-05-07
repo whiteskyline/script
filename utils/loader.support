@@ -20,6 +20,7 @@
 source ./cd.sh
 source ./goto.sh
 source ./goprj.sh
+source ./gocmd.sh
 source ./mysql.sh
 source ./git.sh
 source ./st.sh
