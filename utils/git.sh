@@ -20,7 +20,6 @@
 alias gitv="open /Applications/Sourcetree.app"
 alias gitg="git log --graph --decorate --oneline"
 alias gitall="git log --graph --decorate --oneline --simplify-by-decoration --all"
-alias git="git -P"
 alias gitlog='git log | more'
 
 function gitsource () {
