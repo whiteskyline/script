@@ -24,3 +24,9 @@ cdr:                相对于开发Home目录跳转  relative_path
 gitlog:             普通方式展示git日志      
 ip:                 打印IP列表                   
 ..n:                像父目录跳转            1
+zlist:              常用内置命令列表
+flist:              个人添加命令列表
+vlist:              打印所有个人环境参数
+clist:              打印所有命令
+ki:                 kinit
+devrl:              登陆远程机器
