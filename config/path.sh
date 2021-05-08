@@ -71,6 +71,3 @@ export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 #
 export FFMPEG_HOME=$HOME_DIR/soft/package/ffmpeg
 export PATH=$FFMPEG_HOME:$PATH
-
-export GOPATH=$HOME_DIR/source/company/go
-export PATH=$PATH:$GOPATH/bin
