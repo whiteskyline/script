@@ -4,6 +4,7 @@
 export GOROOT=$HOME_DIR/soft/package/go
 export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME_DIR/source/go/
+export PATH=$PATH:$GOPATH/bin
 # export GONOPROXY=code.byted.org,gitlab.everphoto.cn,git.byted.org,sysrepo.byted.org,golang.org
 # export GONOPROXY=code.byted.org,gitlab.everphoto.cn,git.byted.org,sysrepo.byted.org,golang.org,gopkg.in,github.com
 # export GOPROXY="https://goproxy.byted.org,https://goproxy.cn,direct"

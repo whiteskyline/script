@@ -36,7 +36,7 @@ function gitsource () {
 function gitclean() {
     echo "[info] current branch list:"
     git br
-    git br | grep -v * | grep -v master | xargs git br -d
+    git br | grep -v "*" | grep -v master | xargs git br -d
 }
 
 # 返回最后几条提交信息

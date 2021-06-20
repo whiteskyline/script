@@ -71,3 +71,17 @@ export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 #
 export FFMPEG_HOME=$HOME_DIR/soft/package/ffmpeg
 export PATH=$FFMPEG_HOME:$PATH
+
+#
+# ffprobe
+#
+export FFPROBE_HOME="/usr/local/Cellar/ffmpeg"
+export PATH=$FFPROBE_HOME/bin:$PATH
+
+
+
+#
+# add bison version
+#
+export BISON_HOME="/usr/local/opt/bison@2.7/bin"
+export PATH=$BISON_HOME:$PATH
