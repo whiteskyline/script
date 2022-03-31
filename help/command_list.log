@@ -30,3 +30,5 @@ vlist:              打印所有个人环境参数
 clist:              打印所有命令
 ki:                 kinit
 devrl:              登陆远程机器
+go_update_dep_to:   将本项目的最新版本号更新到目标项目的依赖
+go_update_dep:      更新本项目的某个依赖为本地最新的提交

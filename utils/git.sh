@@ -43,3 +43,10 @@ function gitclean() {
 function gitlast() {
     git log | head -n 24
 }
+
+# 进行gitreview
+function gitreview() {
+    current_branch=`git br | grep \* | awk '{print $2}'`
+    prefix=`git remote -v | grep push | awk '{print $2}' | awk -F'@|:' '{print $2"/"$3}' | awk -F'.git' '{print "https://"$1"/merge_requests/new?merge_request%5Bsource_branch%5D="}'`
+    echo $prefix"$current_branch" 
+}

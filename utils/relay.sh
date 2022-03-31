@@ -6,6 +6,6 @@ function klist() {
 }
 function devrl() 
 {
-    ssh linmingxing@10.248.140.20
+    ssh linmingxing@10.248.137.136
 }
 

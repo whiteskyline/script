@@ -85,3 +85,15 @@ export PATH=$FFPROBE_HOME/bin:$PATH
 #
 export BISON_HOME="/usr/local/opt/bison@2.7/bin"
 export PATH=$BISON_HOME:$PATH
+
+#
+# add doas version
+#
+export DOAS_HOME="/Users/horizon/soft/package/doas"
+export PATH=$PATH:$DOAS_HOME/bin
+
+#
+# add doas version
+#
+export WRK_HOME="/Users/horizon/soft/package/wrk"
+export PATH=$PATH:$WRK_HOME/bin
