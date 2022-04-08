@@ -59,3 +59,14 @@ function go_update_dep()
     echo "will update $1 -> $dep_log_id"
     go get $1@$dep_log_id
 }
+
+function sw_test()
+{
+    export TESTING_PREFIX="offline"
+}
+
+function sw_normal()
+{
+    
+    export TESTING_PREFIX=""
+}

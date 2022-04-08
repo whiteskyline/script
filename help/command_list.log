@@ -10,6 +10,7 @@ gitv:               打开Sourcetree
 gitg:               完整命令行打印版本树       
 gitall:             版本关系命令行树         
 gitsource:          设置版本追踪远程      
+gitpush:            将当前分支推送到远程分支
 gitclean:           批量删除本地已合并分支 
 dev_go:             开发机到特定开发目录    logs|api|common|api_common|idl|api_feed|bs_main|bs_user
 py:                 Python执行                   
@@ -32,3 +33,5 @@ ki:                 kinit
 devrl:              登陆远程机器
 go_update_dep_to:   将本项目的最新版本号更新到目标项目的依赖
 go_update_dep:      更新本项目的某个依赖为本地最新的提交
+sw_test:            增加单测环境变量
+sw_normal:          去除单测环境变量

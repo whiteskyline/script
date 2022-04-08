@@ -39,6 +39,11 @@ function gitclean() {
     git br | grep -v "*" | grep -v master | xargs git br -d
 }
 
+function gitpush() {
+    current_branch=`git br | grep \* | awk '{print $2}'`
+    git push origin $current_branch
+}
+
 # 返回最后几条提交信息
 function gitlast() {
     git log | head -n 24
