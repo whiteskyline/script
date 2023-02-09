@@ -35,11 +35,6 @@ export PATH=$J_HOME/Commands:$PATH
 export MYSQL_HOME=$HOME_DIR/soft/package/mysql
 export PATH=$MYSQL_HOME/bin:$PATH
 
-#
-# Python Env Init
-#
-export PYTHON_HOME=/Library/Frameworks/Python.framework/Versions/2.7
-export PATH=$PYTHON_HOME/bin:$PATH
 
 #
 # Node.js Env Init
@@ -97,3 +92,9 @@ export PATH=$PATH:$DOAS_HOME/bin
 #
 export WRK_HOME="/Users/horizon/soft/package/wrk"
 export PATH=$PATH:$WRK_HOME/bin
+
+#
+# Python Env Init
+#
+export PYTHON_HOME=/Library/Frameworks/Python.framework/Versions/3.10
+export PATH=$PYTHON_HOME/bin:$PATH

@@ -31,6 +31,9 @@ function switch_go()
     elif [[ $1 == "global.15" ]]; then
         cd $HOME_DIR/soft/package/ && rm -f go
         cd $HOME_DIR/soft/package/ && ln -s go.global.1.15.14 go
+    elif [[ $1 == "global.16" ]]; then
+        cd $HOME_DIR/soft/package/ && rm -f go
+        cd $HOME_DIR/soft/package/ && ln -s go.global.1.16.15 go
     elif [[ $1 == "global.17" ]]; then
         cd $HOME_DIR/soft/package/ && rm -f go
         cd $HOME_DIR/soft/package/ && ln -s go.global.1.17.8 go

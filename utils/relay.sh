@@ -8,4 +8,7 @@ function devrl()
 {
     ssh linmingxing@10.248.137.136
 }
-
+function relay()
+{
+    ssh relay.byted.org
+}
