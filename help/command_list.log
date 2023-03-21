@@ -6,6 +6,8 @@ mysqld_safe:        安全启动msql
 mysqladmin:         登陆admin用户        
 mysql:              直接启动mysql             
 switch_go:          切换go版本              byted|global|global.13|global.14
+go_mr_master_um:    合并master的代码，并且采用master的go.mod/go.sum
+go_mr_master_uc:    合并master的代码，并且采用本地分支的go.mod/go.sum
 gitv:               打开Sourcetree             
 gitg:               完整命令行打印版本树       
 gitall:             版本关系命令行树         
@@ -37,3 +39,6 @@ sw_test:            增加单测环境变量
 sw_normal:          去除单测环境变量
 relay:              登录跳板机
 cgrep:              带颜色的grep
+find_all_dep:       用于所有的go依赖文件的列出
+go_test_unit:       用于go进行单独的命名单元测试, 文件，DIR，方法名
+go_test_all:        用于测试目标文件的所有单测，文件，DIR

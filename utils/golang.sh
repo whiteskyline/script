@@ -63,6 +63,25 @@ function go_update_dep()
     go get $1@$dep_log_id
 }
 
+function go_mr_master_um()
+{
+    br=`git branch | grep "*"`  
+    current_branch=`echo ${br/* /}`
+    git co master
+    cp go.mod go.sum /tmp/
+    git co $current_branch
+    git merge master
+    cp /tmp/go.mod /tmp/go.sum ./
+}
+
+function go_mr_master_uc()
+{
+    br=`git branch | grep "*"`  
+    cp go.mod go.sum /tmp/
+    git merge master
+    cp /tmp/go.mod /tmp/go.sum ./
+}
+
 function sw_test()
 {
     export TESTING_PREFIX="offline"
@@ -72,4 +91,25 @@ function sw_normal()
 {
     
     export TESTING_PREFIX=""
+}
+
+function find_all_dep()
+{
+    TARGET_PATH=$1
+    find "$1" -maxdepth 1 -name "*.go" | grep -v test
+}
+
+function go_test_unit()
+{
+    TEST_FILE=$1
+    TEST_DEP=$2
+    TEST_FUNC=$3
+    go test -gcflags="all=-l -N" -v -run $TEST_FUNC $TEST_FILE `find_all_dep $TEST_DEP`
+}
+
+function go_test_all()
+{
+    TEST_FILE=$1
+    TEST_DEP=$2
+    go test -gcflags="all=-l -N" -v $TEST_FILE `find_all_dep $TEST_DEP`
 }

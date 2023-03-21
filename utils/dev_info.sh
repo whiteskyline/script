@@ -4,4 +4,6 @@
 function print_dev()
 {
     echo "My UID: 75212470474"
+    echo "Test Pair UID: 108315688949"
+    echo "Luna UID: 108315688949"
 }
