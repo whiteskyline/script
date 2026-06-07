@@ -1,4 +1,4 @@
 MODULE_BASE_DIR=$LM_BASE_DIR
-function vlist() {
+function listv() {
     cat $MODULE_BASE_DIR/env_list.log
 }

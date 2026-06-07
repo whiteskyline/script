@@ -8,6 +8,9 @@ mysql:              直接启动mysql
 switch_go:          切换go版本              byted|global|global.13|global.14
 go_mr_master_um:    合并master的代码，并且采用master的go.mod/go.sum
 go_mr_master_uc:    合并master的代码，并且采用本地分支的go.mod/go.sum
+git_list_all_br:        遍历所有文案夹，输出有目标分支的项目
+gitsearchpoj:         遍历所有嗯减价，输出有目标分支的文件夹
+gits:               切换到目标分支，并且记录之前的分支，如果gits prev则是返回到上次记录的分支
 gitv:               打开Sourcetree             
 gitg:               完整命令行打印版本树       
 gitall:             版本关系命令行树         
@@ -24,13 +27,15 @@ cdd:                带有访问记录的cd        path
 cdn:                访问指定位置记录        number
 cdp:                显示访问记录                
 cdr:                相对于开发Home目录跳转  relative_path
+pbcopy:             将输入放置到粘贴板
+pbpaste:            从粘贴板输出            
 gitlog:             普通方式展示git日志      
 ip:                 打印IP列表                   
 ..n:                像父目录跳转            1
-zlist:              常用内置命令列表
-flist:              个人添加命令列表
-vlist:              打印所有个人环境参数
-clist:              打印所有命令
+listz:              常用内置命令列表
+listf:              个人添加命令列表
+listv:              打印所有个人环境参数
+listc:              打印所有命令
 ki:                 kinit
 devrl:              登陆远程机器
 go_update_dep_to:   将本项目的最新版本号更新到目标项目的依赖
@@ -42,3 +47,8 @@ cgrep:              带颜色的grep
 find_all_dep:       用于所有的go依赖文件的列出
 go_test_unit:       用于go进行单独的命名单元测试, 文件，DIR，方法名
 go_test_all:        用于测试目标文件的所有单测，文件，DIR
+pbcopy:             将标准输出复制到剪贴板
+pbpaste:            粘贴
+gitcbr:             复制当前分支名称
+seat:               找到特定的TCE服务
+seaa:               找到特定的argos服务页面

@@ -98,3 +98,9 @@ export PATH=$PATH:$WRK_HOME/bin
 #
 export PYTHON_HOME=/Library/Frameworks/Python.framework/Versions/3.10
 export PATH=$PYTHON_HOME/bin:$PATH
+
+#
+# Homebrew Env Init
+#
+export HOMEBREW_HOME=/opt/homebrew
+export PATH=$HOMEBREW_HOME/bin:$PATH

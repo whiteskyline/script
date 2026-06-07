@@ -8,10 +8,9 @@ export PATH=$PATH:$GOPATH/bin
 # export GONOPROXY=code.byted.org,gitlab.everphoto.cn,git.byted.org,sysrepo.byted.org,golang.org
 # export GONOPROXY=code.byted.org,gitlab.everphoto.cn,git.byted.org,sysrepo.byted.org,golang.org,gopkg.in,github.com
 # export GOPROXY="https://goproxy.byted.org,https://goproxy.cn,direct"
-go env -w GOPROXY="https://goproxy.byted.org,https://goproxy.cn,direct"
+go env -w GOPROXY="https://go-mod-proxy.byted.org,https://goproxy.cn,https://proxy.golang.org,direct"
 export GO111MODULE=on
 export GOPRIVATE="*.byted.org,*.everphoto.cn,git.smartisan.com"
-export GOSUMDB=off
 
 function switch_go()
 {
@@ -22,26 +21,33 @@ function switch_go()
     elif [[ $1 == "global" ]]; then
         cd $HOME_DIR/soft/package/ && rm -f go
         cd $HOME_DIR/soft/package/ && ln -s go.global.1.12.4 go
-    elif [[ $1 == "global.13" ]]; then
-        cd $HOME_DIR/soft/package/ && rm -f go
-        cd $HOME_DIR/soft/package/ && ln -s go.global.1.13.15 go
-    elif [[ $1 == "global.14" ]]; then
-        cd $HOME_DIR/soft/package/ && rm -f go
-        cd $HOME_DIR/soft/package/ && ln -s go.global.1.14.13 go
-    elif [[ $1 == "global.15" ]]; then
-        cd $HOME_DIR/soft/package/ && rm -f go
-        cd $HOME_DIR/soft/package/ && ln -s go.global.1.15.14 go
     elif [[ $1 == "global.16" ]]; then
         cd $HOME_DIR/soft/package/ && rm -f go
         cd $HOME_DIR/soft/package/ && ln -s go.global.1.16.15 go
     elif [[ $1 == "global.17" ]]; then
         cd $HOME_DIR/soft/package/ && rm -f go
-        cd $HOME_DIR/soft/package/ && ln -s go.global.1.17.8 go
+        cd $HOME_DIR/soft/package/ && ln -s go.global.1.17.9 go
     elif [[ $1 == "global.18" ]]; then
         cd $HOME_DIR/soft/package/ && rm -f go
-        cd $HOME_DIR/soft/package/ && ln -s go.global.1.18 go
+        cd $HOME_DIR/soft/package/ && ln -s go.global.1.18.9 go
+    elif [[ $1 == "global.19" ]]; then
+        cd $HOME_DIR/soft/package/ && rm -f go
+        cd $HOME_DIR/soft/package/ && ln -s go.global.1.19.13 go
+    elif [[ $1 == "global.20" ]]; then
+        cd $HOME_DIR/soft/package/ && rm -f go
+        cd $HOME_DIR/soft/package/ && ln -s go.global.1.20.14 go
+    elif [[ $1 == "global.21" ]]; then
+        cd $HOME_DIR/soft/package/ && rm -f go
+        cd $HOME_DIR/soft/package/ && ln -s go.global.1.21.13 go
+    elif [[ $1 == "global.22" ]]; then
+        cd $HOME_DIR/soft/package/ && rm -f go
+        cd $HOME_DIR/soft/package/ && ln -s go.global.1.22.10 go
+    elif [[ $1 == "global.23" ]]; then
+        cd $HOME_DIR/soft/package/ && rm -f go
+        cd $HOME_DIR/soft/package/ && ln -s go.global.1.23.7 go
     fi
     cd $current_dir
+    go version
 }
 
 function go_update_dep_to()

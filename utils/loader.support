@@ -30,3 +30,4 @@ source ./nginx.sh
 source ./golang.sh
 source ./dev_info.sh
 source ./relay.sh
+source ./dy.sh
