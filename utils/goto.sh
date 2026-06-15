@@ -99,3 +99,24 @@ function vnc_leipi() {
   echo "open vnc://$addr"
   open "vnc://$addr"
 }
+
+
+function ssh_slave() {
+  local user="ming.horizon"
+  local title="OpenClaw宿主机"
+  local addr="192.168.0.226"
+
+
+
+  printf '\033]0;%s\007' "$title"
+
+  echo "ssh $user@$addr"
+  ssh "$user@$addr"
+}
+
+function vnc_slave() {
+  local addr="192.168.0.226"
+
+  echo "open vnc://$addr"
+  open "vnc://$addr"
+}
