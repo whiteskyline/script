@@ -45,6 +45,9 @@ function switch_go()
     elif [[ $1 == "global.23" ]]; then
         cd $HOME_DIR/soft/package/ && rm -f go
         cd $HOME_DIR/soft/package/ && ln -s go.global.1.23.7 go
+    elif [[ $1 == "global.26" ]]; then
+        cd $HOME_DIR/soft/package/ && rm -f go
+        cd $HOME_DIR/soft/package/ && ln -s go.global.1.26.4 go
     fi
     cd $current_dir
     go version
