@@ -23,6 +23,7 @@ alias ip="ifconfig"
 alias draw="draw_image"
 
 alias pc="pbcopy"
+alias py="python3"
 alias sc="screencapture -s -c"
 alias hy="history"
 alias cgrep="grep --color"

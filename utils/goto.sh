@@ -1,5 +1,5 @@
-# 目录跳转、内部页面和桥接设备入口。
-# TODO: 拆成 nav/web/leipi。
+# 目录跳转和内部页面入口。
+# TODO: 拆成 nav/web。
 # 跳转到预设目录。
 function goto()
 {
@@ -51,58 +51,4 @@ function seaa()
 {
   psm=$1
   open "https://cloud.bytedance.net/argos/overview/server_overview?from=now-1h&psm=$psm&region=cn&tab=overview&to=now&var-sidecar_psm=primary&x-resource-account=public"
-}
-
-# 获取桥接设备 IP。
-function _leipi_peer_ip() {
-  local dev="${1:-bridge0}"
-
-  arp -an 2>/dev/null \
-    | awk -v dev="$dev" '
-      $0 ~ " on " dev " " && $2 ~ /^\([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\)$/ {
-        gsub(/[()]/, "", $2)
-        if ($2 !~ /^224\.|^239\.|^255\.|^0\./) {
-          print $2
-          exit
-        }
-      }
-    '
-}
-
-# 发现桥接设备并 SSH。
-function ssh_leipi() {
-  local dev="${1:-bridge0}"
-  local user="ming.horizon"
-  local title="OpenClaw宿主机"
-  local addr
-
-  addr=$(_leipi_peer_ip "$dev")
-
-  if [[ -z "$addr" ]]; then
-    echo "没在 $dev 上发现可登录设备。"
-    echo "可先执行: arp -an | grep ' on $dev '"
-    return 1
-  fi
-
-  printf '\033]0;%s\007' "$title"
-
-  echo "ssh $user@$addr"
-  ssh "$user@$addr"
-}
-
-# 发现桥接设备并打开 VNC。
-function vnc_leipi() {
-  local dev="${1:-bridge0}"
-  local addr
-
-  addr=$(_leipi_peer_ip "$dev")
-
-  if [[ -z "$addr" ]]; then
-    echo "没在 $dev 上发现可屏幕共享的设备。"
-    echo "可先执行: arp -an | grep ' on $dev '"
-    return 1
-  fi
-
-  echo "open vnc://$addr"
-  open "vnc://$addr"
 }
