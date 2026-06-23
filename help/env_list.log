@@ -1,14 +1,15 @@
 --- 环境参数列表 ---
-HOME_DIR:               开发根目录
-SCRIPT_BASE_DIR:        工具脚本跟目录
-SOURCE_BASE_DIR:        代码目录
-MODULE_BASE_DIR:        固定的在模块内初始化好的本目录
+HOME_DIR:               用户主目录
+SCRIPT_BASE_DIR:        脚本根目录
+SOURCE_BASE_DIR:        代码根目录
+LM_BASE_DIR:            当前模块目录
 
---- GO 环境参数(在golng.sh中) ---
-GOROOT:                 go执行包根目录
-GOPATH:                 go执行文件目录
-GONOPROXY:              GO非代理网站配置PROXY配置
-GOPROXY:                指定GO的代理顺序
-GO111MODULE:            GO MOD开关
-GOSUMDB:                GODB开关,是否去到GO中心进行校验
+--- Go 环境参数 ---
+GOROOT:                 Go 安装目录
+GOPATH:                 Go 工作目录
+GOPROXY:                Go 代理顺序
+GO111MODULE:            Go Module 开关
+GOPRIVATE:              私有 Go 仓库规则
 
+--- Homebrew 环境参数 ---
+HOMEBREW_HOME:          Homebrew 根目录

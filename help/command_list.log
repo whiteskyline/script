@@ -1,7 +1,6 @@
 --- 命令帮助列表 ---
 st:                 设置命令行标题          title
-devrl:              登陆开发机                
-pac_ngxix:          启动nginx               proxy|direct
+pac_nginx:          启动nginx               proxy|direct
 mysqld_safe:        安全启动msql        
 mysqladmin:         登陆admin用户        
 mysql:              直接启动mysql             
@@ -36,13 +35,10 @@ listz:              常用内置命令列表
 listf:              个人添加命令列表
 listv:              打印所有个人环境参数
 listc:              打印所有命令
-ki:                 kinit
-devrl:              登陆远程机器
 go_update_dep_to:   将本项目的最新版本号更新到目标项目的依赖
 go_update_dep:      更新本项目的某个依赖为本地最新的提交
 sw_test:            增加单测环境变量
 sw_normal:          去除单测环境变量
-relay:              登录跳板机
 cgrep:              带颜色的grep
 find_all_dep:       用于所有的go依赖文件的列出
 go_test_unit:       用于go进行单独的命名单元测试, 文件，DIR，方法名

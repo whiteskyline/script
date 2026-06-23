@@ -2,7 +2,7 @@
 MODULE_BASE_DIR=$LM_BASE_DIR
 function listc()
 {
-    MODULE_BASE_DIR=/Users/horizon/script/help
+    MODULE_BASE_DIR=${SCRIPT_BASE_DIR:-/Users/horizon/script}/help
     FNAME=$MODULE_BASE_DIR/command_list.log
     line_num=`wc -l < $FNAME`
     cat $FNAME | head -n 1
