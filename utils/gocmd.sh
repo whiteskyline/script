@@ -1,4 +1,4 @@
-# 对于gocmd命令进行支持
+# 跳转到命令所在目录。
 function gocmd() {
     target_command=$1
     real_cmd_path=`which $1`

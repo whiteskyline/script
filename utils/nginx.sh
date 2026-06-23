@@ -1,9 +1,8 @@
-#
-# Nginx`s commands
-#
+# Nginx 本地命令。
 
 alias dev_nginx=$USER_HOME/soft/package/nginx/sbin/nginx
 
+# 切换 PAC Nginx 配置。
 function pac_nginx() {
 
 	dev_nginx -s stop

@@ -1,6 +1,4 @@
-#
-# 生成Set Title的函数，方便修改Title
-#
+# 设置终端标题。
 
 export DISABLE_AUTO_TITLE="true"
 

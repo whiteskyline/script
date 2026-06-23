@@ -1,21 +1,5 @@
 #!/bin/bash -
-#===============================================================================
-#
-#          FILE: loader.sh
-#
-#         USAGE: ./loader.sh
-#
-#   DESCRIPTION: load all system config shell
-#
-#       OPTIONS: ---
-#  REQUIREMENTS: ---
-#          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: linmingxing
-#  ORGANIZATION:
-#       CREATED: 01/13/15 14:34
-#      REVISION:  ---
-#===============================================================================
+# 加载帮助命令。
 source ./help_list.sh
 source ./value_list.sh
 source ./zash_list.sh

@@ -1,4 +1,4 @@
-# 对于项目直接跳转进行支持
+# 跳转常用项目。
 function goprj()
 {
   AWEME_IM_GOPATH=$GOPATH/src/code.byted.org/aweme_im/

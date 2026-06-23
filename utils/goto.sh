@@ -1,4 +1,6 @@
-# 和goto相关的一些内容
+# 目录跳转、内部页面和桥接设备入口。
+# TODO: 拆成 nav/web/leipi。
+# 跳转到预设目录。
 function goto()
 {
   export UHOME="/Users/bytedance/"
@@ -37,18 +39,21 @@ function goto()
   done
 }
 
+# 打开 TCE 服务页。
 function seat()
 {
   psm=$1
   open "https://cloud.bytedance.net/tce/services?keyword=$psm&page=1\&subs_prefer=true\&type=all\&x-resource-account=public"
 }
 
+# 打开 Argos 服务页。
 function seaa()
 {
   psm=$1
   open "https://cloud.bytedance.net/argos/overview/server_overview?from=now-1h&psm=$psm&region=cn&tab=overview&to=now&var-sidecar_psm=primary&x-resource-account=public"
 }
 
+# 获取桥接设备 IP。
 function _leipi_peer_ip() {
   local dev="${1:-bridge0}"
 
@@ -64,6 +69,7 @@ function _leipi_peer_ip() {
     '
 }
 
+# 发现桥接设备并 SSH。
 function ssh_leipi() {
   local dev="${1:-bridge0}"
   local user="ming.horizon"
@@ -84,6 +90,7 @@ function ssh_leipi() {
   ssh "$user@$addr"
 }
 
+# 发现桥接设备并打开 VNC。
 function vnc_leipi() {
   local dev="${1:-bridge0}"
   local addr
@@ -95,27 +102,6 @@ function vnc_leipi() {
     echo "可先执行: arp -an | grep ' on $dev '"
     return 1
   fi
-
-  echo "open vnc://$addr"
-  open "vnc://$addr"
-}
-
-
-function ssh_slave() {
-  local user="ming.horizon"
-  local title="OpenClaw宿主机"
-  local addr="192.168.0.226"
-
-
-
-  printf '\033]0;%s\007' "$title"
-
-  echo "ssh $user@$addr"
-  ssh "$user@$addr"
-}
-
-function vnc_slave() {
-  local addr="192.168.0.226"
 
   echo "open vnc://$addr"
   open "vnc://$addr"

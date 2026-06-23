@@ -1,21 +1,5 @@
 #!/bin/bash - 
-#===============================================================================
-#
-#          FILE: git_glias.sh
-# 
-#         USAGE: ./git_glias.sh 
-# 
-#   DESCRIPTION: 设置各种类型的git的别名
-# 
-#       OPTIONS: ---
-#  REQUIREMENTS: ---
-#          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: YOUR NAME (), 
-#  ORGANIZATION: 
-#       CREATED: 01/13/15 15:35
-#      REVISION:  ---
-#===============================================================================
+# Git 常用命令。
 
 alias gitv="open /Applications/Sourcetree.app"
 alias gitg="git log --graph --decorate --oneline"
@@ -23,6 +7,7 @@ alias gitall="git log --graph --decorate --oneline --simplify-by-decoration --al
 alias gitlog='git log | more'
 alias gitd="git diff"
 
+# 设置当前分支 upstream。
 function gitsource () {
     echo "[info] current branch list:"
     git br
@@ -34,30 +19,32 @@ function gitsource () {
     git branch --set-upstream-to=origin/$current_branch $current_branch
 }
 
+# 删除已合并本地分支。
 function gitclean() {
     echo "[info] current branch list:"
     git br
     git br | grep -v "*" | grep -v master | xargs git br -d
 }
 
+# 推送当前分支。
 function gitpush() {
     current_branch=`git br | grep \* | awk '{print $2}'`
     git push origin $current_branch
 }
 
-# 返回最后几条提交信息
+# 查看最近提交。
 function gitlast() {
     git log | head -n 24
 }
 
-# 进行gitreview
+# 生成新建 MR 链接。
 function gitreview() {
     current_branch=`git br | grep \* | awk '{print $2}'`
     prefix=`git remote -v | grep push | awk '{print $2}' | awk -F'@|:' '{print $2"/"$3}' | awk -F'.git' '{print "https://"$1"/merge_requests/new?merge_request%5Bsource_branch%5D="}'`
     echo $prefix"$current_branch" 
 }
 
-# 跳转已经存在的Mr界面
+# 生成 MR 列表链接。
 function gitmrs() {
     current_branch=`git br | grep \* | awk '{print $2}'`
     prefix=`git remote -v | grep push | awk '{print $2}' | awk -F'@|:' '{print $2"/"$3}' | awk -F'.git' '{print "https://"$1"/merge_requests"}'`
@@ -65,6 +52,7 @@ function gitmrs() {
 }
 
 export prev_branch="empty"
+# 切换分支。
 function gits() {
   echo "prev_branch:"$prev_branch
   tmp_prev_branch=$(git symbolic-ref --short HEAD 2>/dev/null)
@@ -99,31 +87,34 @@ function gits() {
   fi
 }
 
+# 复制当前分支名。
 function gitcbr() {
     git symbolic-ref --short HEAD 2>/dev/null | pbcopy
 }
 
+# 查找使用指定分支的子目录。
 function git_list_all_br() {
 	folders=(*(/))
 
-	# 遍历每个文件夹
+	# 遍历子目录。
 	for folder in $folders; do
-  		# 进入文件夹
+  		# 进入子目录。
   		cd $folder
   
-		# 检查当前分支
+		# 读取当前分支。
  		branch=$(git symbolic-ref --short HEAD 2>/dev/null)
   
-		# 如果当前分支是"A"，则输出文件夹名称
+		# 命中则输出目录。
 		if [[ $branch == "$1" ]]; then
     			echo $folder
   		fi
   
-  		# 返回上一级目录
+  		# 返回上级目录。
   		cd ..
 	done
 }
 
+# 查找包含指定分支的项目。
 function gitsearchpoj() {
     TARGET_BRANCH=$1
     for dir in */; do

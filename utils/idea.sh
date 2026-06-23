@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# 打开或激活 IntelliJ IDEA。
+
 import os
 import socket
 import struct
 import sys
 import time
 
-# see com.intellij.idea.SocketLock for the server side of this interface
+# 通过 IDEA socket 激活窗口。
 
 RUN_PATH = u'/Applications/IntelliJ IDEA CE.app'
 CONFIG_PATH = u'/Users/minghorizon/Library/Preferences/IdeaIC2016.1'
@@ -96,11 +98,11 @@ if os.path.exists(port_path) and os.path.exists(token_path):
 else:
     print('No IDE instance has been found. New one will be started.')
     if sys.platform == "darwin":
-        # OS X: RUN_PATH is *.app path
+        # macOS 打开应用。
         if len(args):
             args.insert(0, "--args")
         os.execvp("open", ["-a", RUN_PATH] + args)
     else:
-        # Unix common
+        # Unix 直接执行。
         bin_dir, bin_file = os.path.split(RUN_PATH)
         os.execv(RUN_PATH, [bin_file] + args)

@@ -1,7 +1,7 @@
-#
-# 支持开发机上相关的服务的启动
-#
+# 历史开发机服务入口。
+# TODO: 拆成启动、测试、跳转、认证。
 
+# 运行 aweme_scripts handler。
 function script_test() {
 	CURRENT_DIR=`pwd`
 	BASE_DIR=~/repos/aweme
@@ -10,6 +10,7 @@ function script_test() {
 	cd $CURRENT_DIR
 }
 
+# 运行 aweme_scripts total_test。
 function unit_test() {
 	CURRENT_DIR=`pwd`
 	BASE_DIR=~/repos/toutiao/aweme
@@ -18,6 +19,7 @@ function unit_test() {
 	cd $CURRENT_DIR
 }
 
+# 打开服务 Python shell。
 function dev_debug() {
 	if [[ $1 == "api_feed" ]]; then
 		export IS_TEST_ENV="True"
@@ -29,6 +31,7 @@ function dev_debug() {
 	fi
 }
 
+# 运行本地服务测试。
 function dev_test() {
 	CURRENT_DIR=`pwd`
 	BASE_DIR=~/repos/aweme
@@ -38,8 +41,7 @@ function dev_test() {
 	cd $CURRENT_DIR
 }
 
-alias cpy='/data01/users/linmingxing/repos/toutiao/aweme/runtime/bin/python'
-
+# 启动 aweme 服务或脚本。
 function dev_start() {
 	CURRENT_DIR=`pwd`
 	BASE_DIR=~/repos/aweme
@@ -148,6 +150,7 @@ function dev_start() {
 export BASE_DIR=~/repos/aweme
 alias dev_py="$BASE_DIR/runtime/bin/python"
 
+# 跳转 aweme 目录。
 function dev_go() {
 	BASE_DIR=~/repos/aweme
 	if [[ $1 == "logs" ]]; then
@@ -177,20 +180,4 @@ function dev_go() {
 	fi
 }
 
-function switch_go() {
-    current_dir=`pwd`
-    if [[ $1 == "byted" ]]; then
-        cd /opt/tiger/go && rm go 
-        cd /opt/tiger/go && ln -s go1.12-byted go
-    elif [[ $1 == "global" ]]; then
-        cd /opt/tiger/go && rm go
-        cd /opt/tiger/go && ln -s go1.12.1 go   
-    fi
-    cd $current_dir
-}
-
-export TEST_ENV=True
 alias py="python3"
-function ki() {
-    kinit linmingxing@BYTEDANCE.COM
-}

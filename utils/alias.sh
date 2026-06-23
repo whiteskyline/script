@@ -1,25 +1,7 @@
 #!/bin/bash - 
-#===============================================================================
-#
-#          FILE: alias_loader.sh
-# 
-#         USAGE: ./alias_loader.sh 
-# 
-#   DESCRIPTION: 
-# 
-#       OPTIONS: ---
-#  REQUIREMENTS: ---
-#          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: YOUR NAME (), 
-#  ORGANIZATION: 
-#       CREATED: 01/22/15 10:41
-#      REVISION:  ---
-#===============================================================================
+# 通用别名和小工具。
 
-#
-# 绘制图形
-#
+# 渲染 Graphviz 图片。
 function draw_image()
 {
 	FILE_NAME=/tmp/`od -An -N32 -i /dev/random | openssl md5`.png
@@ -36,9 +18,7 @@ function draw_image()
 	fi
 }
 
-#
-# alias for ipa
-#
+# 通用别名。
 alias ip="ifconfig"
 alias draw="draw_image"
 

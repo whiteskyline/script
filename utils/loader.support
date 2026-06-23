@@ -1,24 +1,8 @@
 #!/bin/bash - 
-#===============================================================================
-#
-#          FILE: loader.sh
-# 
-#         USAGE: ./loader.sh 
-# 
-#   DESCRIPTION: load all system config shell
-# 
-#       OPTIONS: ---
-#  REQUIREMENTS: ---
-#          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: linmingxing
-#  ORGANIZATION: 
-#       CREATED: 01/13/15 14:34
-#      REVISION:  ---
-#===============================================================================
-
+# 加载工具命令。
 source ./cd.sh
 source ./goto.sh
+source ./host_link.sh
 source ./goprj.sh
 source ./gocmd.sh
 source ./mysql.sh
@@ -29,5 +13,4 @@ source ./dev_machine_script.sh
 source ./nginx.sh
 source ./golang.sh
 source ./dev_info.sh
-source ./relay.sh
 source ./dy.sh

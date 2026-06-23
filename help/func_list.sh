@@ -1,5 +1,10 @@
-# 支持所有的command的内容
-NOW_ALL_FUNC=(`compgen -c`)
+# 列出本次新增命令。
+# 兼容 bash 和 zsh。
+if (( $+commands[compgen] )); then
+    NOW_ALL_FUNC=(`compgen -c`)
+else
+    NOW_ALL_FUNC=(${(k)commands} ${(k)functions} ${(k)aliases})
+fi
 DIFF_ALL_FUNC=(`echo $BASE_ALL_FUNC $NOW_ALL_FUNC | tr ' ' '\n' | sort | uniq -c | awk '$1==1{print $2}'`)
 function listf() {
     declare -A commands

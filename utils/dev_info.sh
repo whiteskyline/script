@@ -1,6 +1,4 @@
-#
-# 关于相关一些用户的数据
-#
+# 打印常用测试数据。
 function print_dev()
 {
     echo "My UID: 75212470474"
@@ -13,6 +11,7 @@ function print_dev()
     echo "Max Int64:9223372036854775807"
 }
 
+# 打开脚本日志页。
 function slog()
 {
     echo $1

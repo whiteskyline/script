@@ -1,106 +1,44 @@
-#!/bin/bash - 
-#===============================================================================
-#
-#          FILE: path_config.sh
-# 
-#         USAGE: ./path_config.sh 
-# 
-#   DESCRIPTION: 
-# 
-#       OPTIONS: ---
-#  REQUIREMENTS: ---
-#          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: YOUR NAME (), 
-#  ORGANIZATION: 
-#       CREATED: 02/10/15 21:17
-#      REVISION:  ---
-#===============================================================================
+#!/bin/zsh
 
-#
-# Thrift Env Init
-#
-export THRIFT_HOME=$HOME_DIR/soft/package/thrift
-export PATH=$THRIFT_HOME/bin:$PATH
+# 只整理当前 shell 的 PATH。
 
-#
-# JAVA Env Init
-#
-export J_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/Current
-export PATH=$J_HOME/Commands:$PATH
+# 判断 PATH 是否已有目录。
+function _script_path_contains() {
+    case ":$PATH:" in
+        *":$1:"*) return 0 ;;
+        *) return 1 ;;
+    esac
+}
 
-#
-# MySQL Env Init
-#
-export MYSQL_HOME=$HOME_DIR/soft/package/mysql
-export PATH=$MYSQL_HOME/bin:$PATH
+# 前置加入存在的目录。
+function _script_path_prepend() {
+    local path_dir="${1:a}"
+    [[ -d "$path_dir" ]] || return 0
+    _script_path_contains "$path_dir" && return 0
+    export PATH="$path_dir:$PATH"
+}
 
+# 清理无效和重复 PATH。
+function _script_path_normalize() {
+    local path_dir
+    local -A seen
+    local -a kept
 
-#
-# Node.js Env Init
-#
-export NODEJS_HOME=$HOME_DIR/soft/package/node
-export PATH=$NODEJS_HOME/bin:$PATH
+    for path_dir in ${(s.:.)PATH}; do
+        path_dir="${path_dir:a}"
+        [[ -n "$path_dir" && -d "$path_dir" ]] || continue
+        [[ -n "${seen[$path_dir]}" ]] && continue
+        seen[$path_dir]=1
+        kept+=("$path_dir")
+    done
 
-#
-# Protobuf Env Init
-#
-export PROTOBUF_HOME=$HOME_DIR/soft/package/protoc
-export PATH=$PROTOBUF_HOME/bin:$PATH
+    export PATH="${(j.:.)kept}"
+}
 
-#
-# Nginx Env Unit
-#
-export NGINX_HOME=$HOME_DIR/soft/package/openresty/nginx
-if [ ! -d $NGINX_HOME ]; then
-    export NGINX_HOME=$HOME_DIR/soft/package/nginx
-fi
-export PATH=$NGINX_HOME/sbin:$PATH
+_script_path_normalize
 
+# Homebrew 入口。
+export HOMEBREW_HOME="/opt/homebrew"
+_script_path_prepend "$HOMEBREW_HOME/bin"
 
-#
-export PATH=$PATH:/opt/local/bin:/opt/local/sbin
-
-#
-# add ffmpeg path
-#
-export FFMPEG_HOME=$HOME_DIR/soft/package/ffmpeg
-export PATH=$FFMPEG_HOME:$PATH
-
-#
-# ffprobe
-#
-export FFPROBE_HOME="/usr/local/Cellar/ffmpeg"
-export PATH=$FFPROBE_HOME/bin:$PATH
-
-
-
-#
-# add bison version
-#
-export BISON_HOME="/usr/local/opt/bison@2.7/bin"
-export PATH=$BISON_HOME:$PATH
-
-#
-# add doas version
-#
-export DOAS_HOME="/Users/horizon/soft/package/doas"
-export PATH=$PATH:$DOAS_HOME/bin
-
-#
-# add doas version
-#
-export WRK_HOME="/Users/horizon/soft/package/wrk"
-export PATH=$PATH:$WRK_HOME/bin
-
-#
-# Python Env Init
-#
-export PYTHON_HOME=/Library/Frameworks/Python.framework/Versions/3.10
-export PATH=$PYTHON_HOME/bin:$PATH
-
-#
-# Homebrew Env Init
-#
-export HOMEBREW_HOME=/opt/homebrew
-export PATH=$HOMEBREW_HOME/bin:$PATH
+unfunction _script_path_contains _script_path_prepend _script_path_normalize

@@ -1,39 +1,17 @@
 #!/bin/bash - 
-#===============================================================================
-#
-#          FILE: core_loader.sh
-# 
-#         USAGE: ./core_loader.sh 
-# 
-#   DESCRIPTION: try to load all folders`s loader.sh file
-#					1) set BASE_DIR
-#					2) load base scripts
-# 
-#       OPTIONS: ---
-#  REQUIREMENTS: ---
-#          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: linmingxing
-#  ORGANIZATION: 
-#       CREATED: 01/13/15 14:24
-#      REVISION:  ---
-#===============================================================================
+# 加载所有脚本模块。
 
-#
-# set env base value
-#
+# 设置基础目录。
 if [ `uname` = 'Darwin' ]
 then
-	export HOME_DIR="$HOME_DIR"
+	export HOME_DIR="${HOME_DIR:-$HOME}"
 else
 	export HOME_DIR="/home/linmingxing"
 fi
 export SCRIPT_BASE_DIR="$HOME_DIR/script"
 export SOURCE_BASE_DIR="$HOME_DIR/source"
 
-#
-# 载入每个模块
-#
+# 加载单个模块。
 function load_module()
 {
 	MODULE=$1
@@ -47,10 +25,7 @@ function load_module()
 	cd $CUR_DIR
 }
 
-#
-# 初始化每个模块用到的
-#
-# echo "find $SCRIPT_BASE_DIR -maxdepth 2 -name "loader.support" -exec echo {} \;"
+# 加载各目录的 loader.support。
 MODULES=(`find $SCRIPT_BASE_DIR -maxdepth 2 -name "loader.support" -exec echo {} \;`)
 for module in ${MODULES[@]};
 do

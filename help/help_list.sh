@@ -1,4 +1,4 @@
-# 进行相关的帮助信息的输出函数
+# 列出自定义命令帮助。
 MODULE_BASE_DIR=$LM_BASE_DIR
 function listc()
 {
