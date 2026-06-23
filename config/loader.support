@@ -1,3 +1,4 @@
 #!/bin/bash - 
 # 加载环境配置。
 source ./path.sh
+source ./go.sh

@@ -8,7 +8,7 @@ alias gitlog='git log | more'
 alias gitd="git diff"
 
 # 设置当前分支 upstream。
-function gitsource () {
+function gitupstream () {
     echo "[info] current branch list:"
     git br
     if [ $? -ne 0 ]
@@ -17,6 +17,11 @@ function gitsource () {
     fi
     current_branch=`git br | grep \* | awk '{print $2}'`
     git branch --set-upstream-to=origin/$current_branch $current_branch
+}
+
+# 兼容旧命令。
+function gitsource () {
+    gitupstream "$@"
 }
 
 # 删除已合并本地分支。
@@ -51,10 +56,10 @@ function gitmrs() {
     echo $prefix
 }
 
-export prev_branch="empty"
+_git_prev_branch=""
 # 切换分支。
 function gits() {
-  echo "prev_branch:"$prev_branch
+  echo "prev_branch:"$_git_prev_branch
   tmp_prev_branch=$(git symbolic-ref --short HEAD 2>/dev/null)
   if [[ $tmp_prev_branch == $1 ]]; then
     echo "already on branch $1"
@@ -64,9 +69,9 @@ function gits() {
   regex="^([1-9]|[1-9][0-9])$"
 
   if [[ $1 == "prev" ]]; then
-    if [[ -n $prev_branch ]]; then
-      git co $prev_branch
-      export prev_branch=$tmp_prev_branch
+    if [[ -n $_git_prev_branch ]]; then
+      git co $_git_prev_branch
+      _git_prev_branch=$tmp_prev_branch
     else
       echo "No previous branch found"
     fi
@@ -75,12 +80,12 @@ function gits() {
     n=$1
     target_branch=$(echo "$local_branches" | sed -n "${n}p")
     git co $target_branch
-    export prev_branch=$tmp_prev_branch
+    _git_prev_branch=$tmp_prev_branch
   else
     git branch --list | grep -q "$1$"
     if [[ $? -eq 0 ]]; then
       git co $1
-      export prev_branch=$tmp_prev_branch
+      _git_prev_branch=$tmp_prev_branch
     else
       echo "Branch '$1' not found"
     fi
@@ -94,28 +99,18 @@ function gitcbr() {
 
 # 查找使用指定分支的子目录。
 function git_list_all_br() {
-	folders=(*(/))
+    folders=(*(/))
 
-	# 遍历子目录。
-	for folder in $folders; do
-  		# 进入子目录。
-  		cd $folder
-  
-		# 读取当前分支。
- 		branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-  
-		# 命中则输出目录。
-		if [[ $branch == "$1" ]]; then
-    			echo $folder
-  		fi
-  
-  		# 返回上级目录。
-  		cd ..
-	done
+    for folder in $folders; do
+        branch=$(cd "$folder" && git symbolic-ref --short HEAD 2>/dev/null)
+        if [[ $branch == "$1" ]]; then
+            echo "$folder"
+        fi
+    done
 }
 
 # 查找包含指定分支的项目。
-function gitsearchpoj() {
+function gitsearchproj() {
     TARGET_BRANCH=$1
     for dir in */; do
         if [ -d "$dir/.git" ]; then
@@ -125,4 +120,9 @@ function gitsearchpoj() {
             fi
         fi
     done
+}
+
+# 兼容旧命令。
+function gitsearchpoj() {
+    gitsearchproj "$@"
 }

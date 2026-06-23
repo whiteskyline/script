@@ -3,13 +3,13 @@ st:                 设置命令行标题          title
 switch_go:          切换go版本              byted|global|global.13|global.14
 go_mr_master_um:    合并master的代码，并且采用master的go.mod/go.sum
 go_mr_master_uc:    合并master的代码，并且采用本地分支的go.mod/go.sum
-git_list_all_br:        遍历所有文案夹，输出有目标分支的项目
-gitsearchpoj:         遍历所有嗯减价，输出有目标分支的文件夹
+git_list_all_br:     遍历子目录，输出当前分支匹配的项目
+gitsearchproj:       遍历子目录，输出包含目标分支的项目
 gits:               切换到目标分支，并且记录之前的分支，如果gits prev则是返回到上次记录的分支
 gitv:               打开Sourcetree             
 gitg:               完整命令行打印版本树       
 gitall:             版本关系命令行树         
-gitsource:          设置版本追踪远程      
+gitupstream:         设置当前分支 upstream
 gitpush:            将当前分支推送到远程分支
 gitclean:           批量删除本地已合并分支 
 py:                 Python执行                   
