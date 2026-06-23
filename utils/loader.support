@@ -9,4 +9,3 @@ source ./st.sh
 source ./alias.sh
 source ./golang.sh
 source ./dev_info.sh
-source ./dy.sh

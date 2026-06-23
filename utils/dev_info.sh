@@ -11,9 +11,17 @@ function print_dev()
     echo "Max Int64:9223372036854775807"
 }
 
-# 打开脚本日志页。
+# 打开 Argos 日志页。
 function slog()
 {
-    echo $1
-    open "https://cloud.bytedance.net/argos/streamlog/info_overview/log_id_search?logId=$1&psm=aweme.script.im_group_chat&region=cn"
+    local log_id="$1"
+    local psm="$2"
+
+    if [[ -z "$log_id" || -z "$psm" ]]; then
+        echo "用法: slog log_id psm" >&2
+        return 1
+    fi
+
+    echo "log_id:$log_id psm:$psm"
+    open "https://cloud.bytedance.net/argos/streamlog/info_overview/log_id_search?logId=$log_id&psm=$psm&region=cn"
 }
