@@ -5,12 +5,10 @@ source ./goto.sh
 source ./host_link.sh
 source ./goprj.sh
 source ./gocmd.sh
-source ./mysql.sh
 source ./git.sh
 source ./st.sh
 source ./alias.sh
 source ./dev_machine_script.sh
-source ./nginx.sh
 source ./golang.sh
 source ./dev_info.sh
 source ./dy.sh

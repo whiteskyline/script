@@ -1,9 +1,5 @@
 --- 命令帮助列表 ---
 st:                 设置命令行标题          title
-pac_nginx:          启动nginx               proxy|direct
-mysqld_safe:        安全启动msql        
-mysqladmin:         登陆admin用户        
-mysql:              直接启动mysql             
 switch_go:          切换go版本              byted|global|global.13|global.14
 go_mr_master_um:    合并master的代码，并且采用master的go.mod/go.sum
 go_mr_master_uc:    合并master的代码，并且采用本地分支的go.mod/go.sum
