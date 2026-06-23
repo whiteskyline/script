@@ -37,6 +37,7 @@ sw_normal:          去除单测环境变量
 cgrep:              带颜色的grep
 dissh:              SSH到主机               m1|m2|intel
 divnc:              VNC到主机               m1|m2|intel
+discp:              复制到主机              target m1|m2|intel
 find_all_dep:       用于所有的go依赖文件的列出
 go_test_unit:       用于go进行单独的命名单元测试, 文件，DIR，方法名
 go_test_all:        用于测试目标文件的所有单测，文件，DIR

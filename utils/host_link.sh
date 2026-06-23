@@ -100,3 +100,23 @@ function divnc() {
   echo "open vnc://$host"
   open "vnc://$host"
 }
+
+# 复制文件到指定主机。
+function discp() {
+  local target="$1"
+  local host_key="$2"
+  local remote_dir="${3:-~/Downloads/}"
+  local host
+  local user
+
+  if [[ -z "$target" || -z "$host_key" ]]; then
+    echo "用法: discp target m1|m2|intel [remote_dir]" >&2
+    return 1
+  fi
+
+  host=$(_di_host_name "$host_key" "discp") || return 1
+  user=$(_di_host_user "$host_key" "discp") || return 1
+
+  echo "scp $target $user@$host:$remote_dir"
+  scp "$target" "$user@$host:$remote_dir"
+}
