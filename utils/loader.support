@@ -3,7 +3,6 @@
 source ./cd.sh
 source ./goto.sh
 source ./host_link.sh
-source ./goprj.sh
 source ./gocmd.sh
 source ./git.sh
 source ./st.sh

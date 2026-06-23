@@ -15,7 +15,7 @@ gitclean:           批量删除本地已合并分支
 py:                 Python执行                   
 print_dev:          打印开发机用户信息    
 goto:               去到某个工作目录        source|video|home|doc|soft|script|nginx|worklog
-goprj:              去到某个项目目录        ebtools|ascript
+goprj:              兼容项目跳转            ebtools|ascript|bitbar
 gocmd:              去到某个命令的目录      cmd
 cdd:                带有访问记录的cd        path
 cdn:                访问指定位置记录        number

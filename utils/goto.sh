@@ -19,11 +19,15 @@ function goto()
 
   location_map[ai_island]="$HOME_DIR/source/go/src/github.com/whiteskyline/ai_island"
   location_map[ai_sec]="$HOME_DIR/source/go/src/github.com/whiteskyline/ai_secretary"
+  location_map[ebtools]="$SOURCE_BASE_DIR/personal/ebtools"
+  location_map[ascript]="/Library/Services"
+  location_map[bitbar]="$SOURCE_BASE_DIR/personal/bitbar_plugin"
 
   if [[ $1 == "help" ]]; then
     for key val in ${(kv)location_map}; do
-      echo "$key:   $value"
+      echo "$key:   $val"
     done
+    return
   fi
 
   for key val in ${(kv)location_map}; do
