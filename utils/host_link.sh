@@ -108,15 +108,25 @@ function discp() {
   local remote_dir="${3:-~/Downloads/}"
   local host
   local user
+  local scp_args=()
 
   if [[ -z "$target" || -z "$host_key" ]]; then
     echo "用法: discp target m1|m2|intel [remote_dir]" >&2
     return 1
   fi
 
+  if [[ ! -e "$target" ]]; then
+    echo "目标不存在: $target" >&2
+    return 1
+  fi
+
+  if [[ -d "$target" ]]; then
+    scp_args=(-r)
+  fi
+
   host=$(_di_host_name "$host_key" "discp") || return 1
   user=$(_di_host_user "$host_key" "discp") || return 1
 
-  echo "scp $target $user@$host:$remote_dir"
-  scp "$target" "$user@$host:$remote_dir"
+  echo "scp ${scp_args[*]} $target $user@$host:$remote_dir"
+  scp "${scp_args[@]}" "$target" "$user@$host:$remote_dir"
 }
