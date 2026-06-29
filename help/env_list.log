@@ -13,3 +13,5 @@ GOPRIVATE:              私有 Go 仓库规则
 
 --- Homebrew 环境参数 ---
 HOMEBREW_HOME:          Homebrew 根目录
+HOMEBREW_API_DOMAIN:    Homebrew API 镜像
+HOMEBREW_BOTTLE_DOMAIN: Homebrew bottle 镜像

@@ -45,7 +45,7 @@ function _script_path_normalize() {
 _script_path_normalize
 
 # Homebrew 入口。
-export HOMEBREW_HOME="/opt/homebrew"
+export HOMEBREW_HOME="${HOMEBREW_HOME:-/opt/homebrew}"
 _script_path_prepend "$HOMEBREW_HOME/sbin"
 _script_path_prepend "$HOMEBREW_HOME/bin"
 
